@@ -1,0 +1,30 @@
+body {
+	background-color: #FFFFFF !important;
+}
+
+.common-backgroundcolor {
+	background-color: #FFFFFF !important;
+}
+.mui-bar-tab .mui-tab-item.mui-active{
+	color: #00BFFF;
+}
+.mui-tab-label {
+	font-size: 15px !important;
+}
+
+.button-height {
+	opacity: 1;
+	text-align: left;
+	background-color: #efeff4;
+	
+	border-radius: 16px;
+	padding-left: 10px !important;
+}
+
+.address-pos {
+	font-size: 15px !important;
+	margin-left: -8px;
+	font-family: sans-serif;
+	width: 60px;
+	display: inline-block;
+}

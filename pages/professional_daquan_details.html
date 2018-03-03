@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../fonts/iconfont/iconfont.css" />
+		<style>
+			.mui-table-view-cell::after {
+				left: 0px !important;
+			}
+			
+			.mui-table-view::after {
+				height: 0px !important;
+			}
+			
+			.mui-table-view-cell.mui-active {
+				background-color: #FFFFFF !important;
+			}
+			
+			a.mui-active {
+				background-color: #FFFFFF !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav line-color common-backgroundcolor">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="title"></h1>
+			<a class="mui-icon mui-pull-right iconfont icon-shoucang" style="font-size: 20px;" id="shouCang"></a>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view" style="margin-top: 0px;">
+				<script id="proDaQuan" type="text/html">
+					{{if resultList}}
+					<li class="mui-table-view-cell">
+						<h4 style="font-weight: normal;">专业属性</h4>
+					</li>
+					<li class="mui-table-view-cell mui-media" style="border-bottom: 8px solid #F2F2F2 !important;">
+						<a href="#">
+							<div class="mui-media-body">
+								<div style="width: 100%;" class="mui-pull-right">
+									<!--<h3 style="font-weight: normal;display: inline-block;white-space: normal;width: 70%;">{{resultList.specialname}}</h3>-->
+									<p class="mui-ellipsis"><span style="float: left;width: 50%;white-space: normal;">大学学历:  <span style="color: #00BBFF;font-size: 16px;">{{resultList.zycengci}}</span></span><span style="float: right;width: 50%;white-space: normal;">人气:  <span style="color: #00BBFF;font-size: 16px;">{{resultList.peopleHeat}}</span></span>
+									</p>
+									<p class="mui-ellipsis"><span style="float: left;width: 50%;white-space: normal;">专业排名:  <span style="color: #00BBFF;font-size: 16px;">{{resultList.ranking}}</span></span><span style="float: right;width: 50%;white-space: normal;">专业代码:  <span style="color: #00BBFF;font-size: 16px;">{{resultList.code}}</span></span>
+									</p>
+
+								</div>
+							</div>
+						</a>
+					</li>
+					{{/if}}
+				</script>
+				<div id="proDaQuanCo"></div>
+				<li class="mui-table-view-cell">
+					<h4 style="font-weight: normal;">专业简介</h4>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<p style="color: #000000;font-size: 15px;" id="inTrouce"></p>
+				</li>
+			</ul>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/template.js"></script>
+		<script type="text/javascript" src="../js/app.js"></script>
+		<script type="text/javascript" src="../js/professional_daquan_details.js"></script>
+	</body>
+
+</html>

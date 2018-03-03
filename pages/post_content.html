@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" class="feedback">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>发布内容</title>
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/mui.poppicker.css" />
+		<link rel="stylesheet" href="../css/mui.picker.css" />
+		<link rel="stylesheet" type="text/css" href="../css/post_content.css" />
+		<link rel="stylesheet" href="../css/common.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav line-color common-backgroundcolor">
+			<a class="mui-action-back mui-icon mui-icon-closeempty mui-pull-left" style="font-size: 35px;"></a>
+			<button id="submit" class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" style="width: 60px;">发送</button>
+			<h1 class="mui-title">发布内容</h1>
+		</header>
+		<div class="mui-content">
+			<div class="row mui-input-row" style="border-bottom: 1px solid gainsboro;">
+				<textarea id='question' class="mui-input-clear question" placeholder="请输入内容..."></textarea>
+				<div class="mui-content-padded" style="margin-top: 20px;">
+					<div class="mui-input-row  mui-pull-right" style="height: 35px;">
+						<button type="button" id="clearContent" class="mui-btn" style="width: 80px;border-radius: 20px;margin-top: 0px;height: 30px;"><span style="position: absolute;top: 6px;left: 20px;" id="contentnumber">200</span><span class="mui-icon mui-icon-closeempty" style="position: absolute;top:0px;right: 0px;font-size: 30px;color: #ACACB4;"></span></button>
+						<!--<input name="checkbox" value="" type="checkbox" style="position:absolute;top:1px;background-color: #C8C7CC;border: 1px solid #929292;width: 20px;height: 20px;" id="isniming"><span style="margin-left: 23px;margin-right: 10px;">匿名发送 -->
+						</span>
+					</div>
+				</div>
+			</div>
+			<form class="mui-input-group" id="schoolItem" style="display: none;">
+				<div class="mui-input-row">
+					<label>学校</label>
+					<input id="school" type="text" placeholder="请选择学校" readonly="readonly" dataCity="">
+				</div>
+			</form>
+			<p>图片(选填,总大小10M以下)</p>
+			<div id='image-list' class="row image-list" style="border: 1px solid gainsboro;"></div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/city.data.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../js/mui.picker.js"></script>
+		<script type="text/javascript" src="../js/mui.poppicker.js"></script>
+		<script type="text/javascript" src="../js/app.js"></script>
+		<script type="text/javascript" src="../js/autofcous.js" ></script>
+		<script type="text/javascript" src="../js/post_content.js"></script>
+	</body>
+
+</html>

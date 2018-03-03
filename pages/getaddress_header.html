@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<title>根据多关键字本地搜索</title>
+		<style type="text/css">
+			body,
+			html,
+			#allmap {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				font-family: "微软雅黑";
+			}
+			
+			#l-map {
+				height: 1px;
+				width: 100%;
+			}
+			
+			#r-result {
+				width: 100%;
+			}
+			
+			.mui-table-view::before {
+				position: absolute;
+				right: 0;
+				left: 0;
+				height: 1px;
+				content: '';
+				-webkit-transform: scaleY(.5);
+				transform: scaleY(.5);
+				background-color: #c8c7cc;
+				top: -1px;
+			}
+			
+			.mui-table-view-cell::after {
+				left: 0px !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav line-color common-backgroundcolor">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">学校</h1>
+		</header>
+		<div class="mui-content">
+			<div id="l-map"></div>
+		</div>
+	</body>
+
+</html>
+<script src="../js/mui.min.js"></script>
+<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	//mui初始化
+	mui.init({
+		subpages: [{
+			url: 'getaddress_body.html',
+			id: 'getaddress_body.html',
+			styles: {
+				top: '45px', //mui标题栏默认高度为45px；
+				bottom: '0px' //默认为0px，可不定义；
+			}
+		}]
+	});
+
+	function floatWebview() {
+		if(App.getWebviewID('mapinput.html')) { // 避免快速多次点击创建多个窗口
+			return;
+		}
+		var floatw = plus.webview.create("mapinput.html", "mapinput.html", {
+			width: '90%',
+			height: '45px',
+			left: "5%",
+			right: "5%",
+			top: '20px',
+			scrollIndicator: 'none',
+			scalable: false,
+			popGesture: 'none'
+		});
+		floatw.addEventListener("loaded", function() {
+			plus.webview.currentWebview().append(floatw);
+			floatw.show('fade-in', 300);
+		}, false);
+	}
+	/*检索*/
+	function getSearch(searchKey) {
+		if(searchKey != "") {
+			var pt = new plus.maps.Point(116.3977, 39.906016);
+			var longitude;
+			var latitude;
+			var map = new plus.maps.Map("l-map"); // 创建Map实例
+			map.hide();
+			map.centerAndZoom(new plus.maps.Point(116.3977, 39.906016), 15);
+			map.showUserLocation(true);
+			map.showZoomControls(true);
+			map.getUserLocation(function(state, pos) {
+				if(0 == state) {
+					map.setCenter(pos);
+				}
+			});
+			var wait = plus.nativeUI.showWaiting("  正在搜索...  ");
+			// 将检索到的第一条信息作为标点添加到地图中
+			var searchObj = new plus.maps.Search(map);
+			searchObj.setPageCapacity(100);
+			searchObj.onPoiSearchComplete = function(state, result) {
+				console.log(JSON.stringify(result))
+				if(state == 0) {
+					if(result.currentNumber <= 0) {
+						mui.toast("没有检索到结果");
+						App.evalJS("getaddress_body.html", "clearInnerhtml('"+searchKey+"')");
+						return;
+					}
+					var list = new Array();
+					for(var i = 0; i < result.currentNumber; i++) {
+						var pos = result.getPosition(i);
+						var marker = new plus.maps.Marker(pos.point);
+						marker.setLabel(pos.name);
+						var addressdd = new addressme(pos.point.getLng(), pos.point.getLat(), pos.name,pos.city);
+						list.push(addressdd);
+						map.addOverlay(marker);
+					}
+					App.evalJS("getaddress_body.html", "getJianSuo('" + JSON.stringify(list) + "'" + "," + "'" + result.totalNumber + "'"+"," + "'" + searchKey + "')");
+				} else {
+					mui.toast("检索失败");
+					App.evalJS("getaddress_body.html", "clearInnerhtml('"+searchKey+"')");
+				}
+				wait.close();
+			}
+			plus.geolocation.getCurrentPosition(function(position) {
+				var coords = position.coords;
+				//获取精度  
+				longitude = coords.longitude;
+				//获取纬度  
+				latitude = coords.latitude;
+				pt = new plus.maps.Point(longitude, latitude);
+				searchObj.poiSearchNearBy(searchKey, pt, 5000);
+			});
+		}
+
+	}
+	mui.plusReady(function() {
+		/*floatWebview();*/
+		getSearch("中学");
+	});
+
+	function addressme(longitude, latitude, address,city) {
+		this.longitude = longitude;
+		this.latitude = latitude;
+		this.address = address;
+		this.city=city;
+	}
+</script>

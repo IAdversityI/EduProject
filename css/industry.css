@@ -1,0 +1,16 @@
+p img {
+	max-width: 100%;
+	height: auto;
+}
+
+.mui-table-view-cell{
+	padding: 11px 0px !important;
+}
+
+.mui-table-view-cell::after {
+	left: 0px !important;
+}
+
+
+
+

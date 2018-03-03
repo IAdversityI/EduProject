@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../fonts/iconfont/iconfont.css" />
+		<link rel="stylesheet" href="../css/colleges_daquan_details_header.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav line-color common-backgroundcolor">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">找大学</h1>
+			<a class="mui-icon mui-pull-right  mui-icon-search" id="searchBtn" style="font-size: 30px;"></a>
+		</header>
+		<header id="gexing" class="mui-bar mui-bar-nav line-color common-backgroundcolor" style="margin-top: 45px;background-color: red;">
+			<h1 class="mui-title" style="left: 0px;right: 0px;"><ul class="mui-table-view mui-grid-view mui-grid-9" style="background-color: #FFFFFF;height: 43px;">
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 arrowflag" style="padding: 0px;margin-top: -4px;" data-arrowdownID="arrowdown1">
+						<a href="#">
+							<div class="mui-media-body"><span id="area">地区</span><span id="arrowdown1" class="mui-icon iconfont icon-jiantoudown" style="font-size: 15px;"></span></div>
+						</a>
+					</li>
+				<!--	<li class="mui-table-view-cell mui-media mui-col-xs-3 arrowflag" style="padding: 0px;margin-top: -4px;" data-arrowdownID="arrowdown2">
+						<a href="#">
+							<div class="mui-media-body">专业<span id="arrowdown2" class="mui-icon iconfont icon-jiantoudown" style="font-size: 15px;"></span></div>
+						</a>
+					</li>-->
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 arrowflag" style="padding: 0px;margin-top: -4px;" data-arrowdownID="arrowdown2">
+						<a href="#">
+							<div class="mui-media-body"><span id="kind">类别</span><span id="arrowdown2" class="mui-icon iconfont icon-jiantoudown" style="font-size: 15px;"></span></div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 arrowflag" style="padding: 0px;margin-top: -4px;" data-arrowdownID="arrowdown3">
+						<a href="#">
+							<div class="mui-media-body"><span id="sXuan">筛选</span><span id="arrowdown3" class="mui-icon iconfont icon-jiantoudown" style="font-size: 15px;"></span></div>
+						</a>
+					</li>
+				</ul></h1>
+		</header>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/app.js"></script>
+		<script>
+			//mui初始化
+			mui.init({
+				subpages: [{
+					url: 'colleges_daquan_details_body.html',
+					id: 'colleges_daquan_details_body.html',
+					styles: {
+						top: '90px', //mui标题栏默认高度为45px；
+						bottom: '0px' //默认为0px，可不定义；
+					}
+				}]
+			});
+			mui('#gexing').on('tap', '.arrowflag', function() {
+				var arrowID = this.getAttribute("data-arrowdownID");
+				/*if(App.getID(arrowID).classList.contains("icon-jiantoudown")) {
+					App.getID(arrowID).classList.add("icon-jiantouup");
+					App.getID(arrowID).classList.remove("icon-jiantoudown");
+					
+				} else {
+					App.getID(arrowID).classList.add("icon-jiantoudown");
+					App.getID(arrowID).classList.remove("icon-jiantouup");
+					App.evalJS("colleges_daquan_details_body.html", "personalizedFloatWeb(\"" + arrowID + "\")");
+				}*/
+				App.evalJS("colleges_daquan_details_body.html", "personalizedFloatWeb(\"" + arrowID + "\")");
+
+			});
+
+			/*function isArraychange(id) {
+				for(var i = 1; i < 4; i++) {
+					if(App.getID("arrowdown" + i).classList.contains("icon-jiantouup")) {
+						App.getID("arrowdown" + i).classList.add("icon-jiantoudown");
+						App.getID("arrowdown" + i).classList.remove("icon-jiantouup");
+					}
+				}
+			}*/
+			/*地区刷新*/
+			function areaFresh(citykindSxuan, inID) {
+				App.getID(inID).innerText = citykindSxuan;
+			}
+			App.getID("searchBtn").addEventListener('tap', function() {
+				App.removeItem("searchValueFlag");
+				var url = "../pages/search_header.html";
+				var id = "../pages/search_header.html";
+				var extras = {};
+				App.openWindow(url, id, extras);
+			})
+		</script>
+	</body>
+
+</html>

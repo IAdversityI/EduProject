@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../fonts/iconfont/iconfont.css" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<style>
+			.mui-content> .mui-table-view:first-child {
+				margin-top: 0px !important;
+			}
+			
+			.mui-active {
+				background-color: transparent!important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav line-color common-backgroundcolor mui-bar-transparent" style="background-color: #00BBFF !important;border-color: #00BBFF;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF;"></a>
+			<a class="mui-icon mui-pull-right iconfont icon-shoucang" style="font-size: 20px;color: #FFFFFF;" id="shouCang"></a>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view" style="background-color: #00BBFF;height: 200px;">
+				<li class="mui-table-view-cell mui-media" style="padding-top: 0px;padding-bottom: 0px;">
+					<a href="#">
+						<div class="mui-media-body">
+							<span style="width: 23%;position: absolute;display: inline-block;top:15px;"><img id="collegeLogo" class="mui-pull-left" src="" style="width:100%;position: absolute;border-radius: 50%;border: 5px solid rgba(255,255,255,1);"></span>
+							<div style="width: 72%;" class="mui-pull-right">
+								<h3 id="collegeName" style="color: #FFFFFF;margin-top:15px;white-space: normal;"></h3>
+								<div class="mui-icon iconfont icon-paiming" style="color: #FFFFFF;"><span style="margin-left: 10px;">综合排名  <span id="wuNo">No.<span id="ranking"></span></span>
+									</span>
+								</div>
+								<p class="mui-ellipsis" style="width: 100%;white-space: normal;height: 70px;margin-top: 10px;" id="college">
+									<button type="button" class="mui-btn" style="font-size: 12px;color: #FFFFFF;background-color: #00BBFF;border-color:#FFFFFF;" id="isEr"></button>
+									<button type="button" class="mui-btn" style="font-size: 12px;color: #FFFFFF;background-color: #00BBFF;border-color:#FFFFFF;" id="isJ"></button>
+									<button type="button" class="mui-btn" style="font-size: 12px;color: #FFFFFF;background-color: #00BBFF;border-color:#FFFFFF;" id="collegeType"></button>
+								</p>
+							</div>
+
+						</div>
+
+					</a>
+				</li>
+			</ul>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/template.js"></script>
+		<script type="text/javascript" src="../js/app.js"></script>
+		<script>
+			//mui初始化
+			mui.init({
+				subpages: [{
+					url: 'colleges_details_body.html',
+					id: 'colleges_details_body.html',
+					styles: {
+						top: '180px', //mui标题栏默认高度为45px；
+						bottom: '0px', //默认为0px，可不定义；
+					}
+				}]
+			});
+
+			mui.plusReady(function() {
+
+			});
+			mui(".mui-table-view-cell").on("tap", ".infoFlag", function() {
+				var info = this.getAttribute("data-info");
+				mui.toast(info);
+			})
+
+			function addData(collegeName, collegeLogo, isEr, isJ, collegeType, ranking, isCollection) {
+				if(isCollection == "true") {
+					App.getID("shouCang").classList.remove("icon-shoucang");
+					App.getID("shouCang").classList.add("icon-shoucangcang");
+				}
+				App.getID("collegeLogo").src = collegeLogo;
+				App.getID("collegeName").innerText = collegeName;
+				App.getID("collegeType").innerText = collegeType;
+
+				if(ranking != "null") {
+					App.getID("ranking").innerText = ranking;
+				} else {
+					App.getID("wuNo").innerHTML = "﹣·﹣";
+				}
+				if(isEr == 1) {
+					App.getID("isEr").innerText = "211";
+				} else {
+					App.getID("isEr").style.display = "none";
+				}
+				if(isEr == 1) {
+					App.getID("isJ").innerText = "985";
+				} else {
+					App.getID("isJ").style.display = "none";
+				}
+			}
+			App.getID("shouCang").addEventListener('tap', function() {
+				if(App.getID("shouCang").classList.contains("icon-shoucang")) {
+					if(App.getItem("tokenflag")) {
+						var url = App.url + '/collection';
+						var dataOptions = {
+							type: "college",
+							token: App.getItem("tokenflag"),
+							commonID: App.getItem("collegeID")
+						};
+						var success = function(data) {
+							if(data.status) {
+								App.getID("shouCang").classList.remove("icon-shoucang");
+								App.getID("shouCang").classList.add("icon-shoucangcang");
+								mui.toast(data.result);
+							} else {
+								mui.toast(data.result);
+								if(data.signal == 1) {
+									App.removeItem("tokenflag");
+									var url = "../pages/login.html";
+									var id = "../pages/login.html";
+									var extras = {};
+									App.openWindow(url, id, extras);
+								}
+							}
+						};
+						var dataType = "json";
+						App.ajaxNoWait(url, dataOptions, success, dataType);
+					} else {
+						var url = "../pages/login.html";
+						var id = "../pages/login.html";
+						var extras = {};
+						App.openWindow(url, id, extras);
+					}
+
+				} else {
+					if(App.getItem("tokenflag")) {
+						var url = App.url + '/collection';
+						var dataOptions = {
+							type: "college",
+							token: App.getItem("tokenflag"),
+							commonID: App.getItem("collegeID")
+						};
+						var success = function(data) {
+							if(data.status) {
+								App.getID("shouCang").classList.add("icon-shoucang");
+								App.getID("shouCang").classList.remove("icon-shoucangcang");
+								mui.toast(data.result);
+							} else {
+								mui.toast(data.result);
+								if(data.signal == 1) {
+									App.removeItem("tokenflag");
+									var url = "../pages/login.html";
+									var id = "../pages/login.html";
+									var extras = {};
+									App.openWindow(url, id, extras);
+								}
+							}
+						};
+						var dataType = "json";
+						App.ajaxNoWait(url, dataOptions, success, dataType);
+					} else {
+						var url = "../pages/login.html";
+						var id = "../pages/login.html";
+						var extras = {};
+						App.openWindow(url, id, extras);
+					}
+
+				}
+
+			})
+		</script>
+	</body>
+
+</html>

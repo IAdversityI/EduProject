@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<style>
+			.mui-table-view-cell {
+				border: none !important;
+			}
+			
+			.mui-popover {
+				height: 200px;
+				width: 97% !important;
+				background-color: #FFFFFF !important;
+			}
+			
+			.mui-popover-arrow {
+				width: 0px !important;
+				height: 0px !important;
+			}
+			
+			#middlePopover {
+				position: fixed;
+				bottom: 5% !important;
+				left: 1.5% !important;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body style="margin:0;padding:0;width:100%;height:100%;text-align:center;">
+		<div id="middlePopover" class="mui-popover">
+			<div class="mui-popover-arrow"></div>
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<ul id="listshareing" class="mui-table-view mui-grid-view mui-grid-9" style="background-color: #FFFFFF;border: none;position: fixed;z-index: 9999;">
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 share-page-flag" data-shareID="weixin" data-shareex="WXSceneSession">
+							<a href="#">
+								<span><img src="../img/weixin.png"/></span>
+								<div class="mui-media-body">微信好友</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 share-page-flag" data-shareID="weixin" data-shareex="WXSceneTimeline">
+							<a href="#">
+								<span><img src="../img/weixin.png"/></span>
+								<div class="mui-media-body">朋友圈</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 share-page-flag" data-shareID="sinaweibo" data-shareex="">
+							<a href="#">
+								<span><img src="../img/sinaweibo.png"/></span>
+								<div class="mui-media-body">新浪微博</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 share-page-flag" data-shareID="tencentweibo" data-shareex="">
+							<a href="#">
+								<span><img src="../img/qq.png" width="32"/></span>
+								<div class="mui-media-body">腾讯微博</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 share-page-flag" data-shareID="qq" data-shareex="">
+							<a href="#">
+								<span><img src="../img/qq.png" width="32"/></span>
+								<div class="mui-media-body">QQ</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script>
+			mui.plusReady(function() {
+				mui("#middlePopover").popover("toggle");
+			})
+		</script>
+	</body>
+
+</html>

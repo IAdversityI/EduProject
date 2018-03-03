@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<style>
+			.mui-table-view-cell::after{
+				left: 0px !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav line-color common-backgroundcolor">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title"><span id="title"></span>大学</h1>
+		</header>
+		<div class="mui-content">
+		    <ul class="mui-table-view" id="schoolList" style="margin-top: 0px;">
+						<script id="schoolListGX" type="text/html">
+							{{if resultList}} {{each resultList as value i}}
+							<li class="mui-table-view-cell mui-media collegesDetailsFlag" style="border-bottom: 8px solid #F2F2F2 !important;" data-collegeID="{{resultList[i].collegeID}}" data-collegeLogo="{{resultList[i].collegeLogo}}" data-collegeName="{{resultList[i].collegeName}}" data-collegeTag="{{resultList[i].collegeTag}}" data-collegeIDNumber="{{resultList[i].collegeIDNumber}}">
+								<a href="#">
+									<span style="width: 20%;position: absolute;top:50%;"><img class="mui-pull-left" src="{{resultList[i].collegeLogo}}"+size+"" style="width: 100%;border-radius: 50%;position: absolute;top:50%;margin-top: -35px;"></span>
+									<div class="mui-media-body">
+										<div style="width: 75%;" class="mui-pull-right">
+											<h3 style="font-weight: normal;display: inline-block;white-space: normal;width: 70%;">{{resultList[i].collegeName}}</h3>
+											<p class="mui-ellipsis"><span style="float: left;width: 50%;white-space: normal;">批次:<span style="color: #00BBFF;">{{resultList[i].batch}}</span></span><span style="float: right;width: 50%;white-space: normal;">预测分数:<span style="color: #00BBFF;">{{resultList[i].expectScore}}</span></span></p>
+											<p class="mui-ellipsis" style="white-space: normal;">
+												{{if JSON(resultList[i].collegeTag).length!=0}}
+												{{each JSON(resultList[i].collegeTag) as value k}}
+												{{if k<6}}	
+												<button type="button"  class="mui-btn" style="width:'+(20+clearSpace(JSON(resultList[i].collegeTag)[k]))+'%;margin-bottom: 5px;background-color: #00BBFF;border-color: rgba(255,255,255,0.5);color: #FFFFFF;font-size: 68%;padding-left: 5px;padding-right: 5px;">{{JSON(resultList[i].collegeTag)[k]}}</button>
+												{{/if}}
+												{{/each}}
+												{{else}}
+												<button type="button" class="mui-btn mui-ellipsis" style="width:32%;margin-bottom: 5px;background-color: #00BBFF;border-color: rgba(255,255,255,0.5);color: #FFFFFF;padding-right: 5px;padding-left: 5px;visibility: hidden;">占位</button>
+												{{/if}}
+												
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>
+							{{/each}} {{/if}}
+						</script>
+					</ul>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/template.js" ></script>
+		<script type="text/javascript" src="../js/app.js" ></script>
+		<script type="text/javascript" src="../js/personalized_recommendation_schoollist.js" ></script>
+	</body>
+
+</html>

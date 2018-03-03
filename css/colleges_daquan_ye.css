@@ -1,0 +1,20 @@
+.mui-table-view-cell::after{
+	left: 0px !important;
+}
+.mui-table-view{
+	margin-top: 0px !important;
+}
+.mui-navigate-right::after{
+	right: 48% !important;
+	text-align: center;
+}
+.mui-active{
+	background-color: #FFFFFF !important;
+}
+.mui-table-view-cell .mui-active{
+	background-color: #EEEEEE !important;
+}
+#myPlayer button.mui-active:enabled,
+#myPlayer button:enabled:active {
+	background-color: transparent;
+}

@@ -1,0 +1,15 @@
+.mui-table-view-cell {
+	border: none !important;
+}
+
+.mui-grid-view {
+	border: none !important;
+}
+
+.mui-active {
+	height: 50px;
+}
+
+.mui-bar-nav~ .mui-content .mui-pull-top-pocket {
+	top: 90px !important;
+}

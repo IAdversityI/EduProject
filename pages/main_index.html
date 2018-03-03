@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../fonts/iconfont/iconfont.css" />
+		<link rel="stylesheet" href="../css/main_index.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-transparent">
+			<!--<a id="mainIndex-title-left" class="mui-icon mui-icon-location mui-pull-left" style="color: #FFFFFF;">
+				<span class="address-pos mui-ellipsis" id="address"></span>
+			</a>-->
+			<h1 id="mainIndex-title1" class="mui-title" style="left: 10px !important;
+	right: 10px !important;"><button type="button" class="mui-btn mui-btn-block mui-icon mui-icon-search button-height" id="button-wid">
+		     <span style="font-size: 14px;">搜索学校/专业</span>
+		       </button></h1>
+		</header>
+
+		<div class="mui-content ">
+			<div id="slider" class="mui-slider">
+				<div class="mui-slider-group mui-slider-loop" id="LunBoData">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+
+					<div class="mui-slider-item mui-slider-item-duplicate" id="newsId1">
+						<a href="#">
+							<img src="../img/moren.png" id="img1">
+							<p class="mui-slider-title"><span style="width: 70%;display: inline-block;position: absolute;left: 0px;" id="img-con1" class="mui-ellipsis"></span></p>
+						</a>
+					</div>
+					<div class="mui-slider-item" id="newsId2">
+						<a href="#">
+							<img src="../img/moren.png" id="img2">
+							<p class="mui-slider-title"><span style="width: 70%;display: inline-block;position: absolute;left: 0px;" id="img-con2" class="mui-ellipsis"></span></p>
+						</a>
+					</div>
+					<div class="mui-slider-item" id="newsId3">
+						<a href="#">
+							<img src="../img/moren.png" id="img3">
+							<p class="mui-slider-title"><span style="width: 70%;display: inline-block;position: absolute;left: 0px;" id="img-con3" class="mui-ellipsis"></span></p>
+						</a>
+					</div>
+					<div class="mui-slider-item" id="newsId4">
+						<a href="#">
+							<img src="../img/moren.png" id="img4">
+							<p class="mui-slider-title"><span style="width: 70%;display: inline-block;position: absolute;left: 0px;" id="img-con4" class="mui-ellipsis"></span></p>
+						</a>
+					</div>
+					<div class="mui-slider-item" id="newsId6">
+						<a href="#">
+							<img src="../img/moren.png" id="img6">
+							<p class="mui-slider-title"><span style="width: 70%;display: inline-block;position: absolute;left: 0px;" id="img-con6" class="mui-ellipsis"></span></p>
+						</a>
+					</div>
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate" id="newsId5">
+						<a href="#">
+							<img src="../img/moren.png" id="img5">
+							<p class="mui-slider-title"><span style="width: 70%;display: inline-block;position: absolute;left: 0px;" id="img-con5" class="mui-ellipsis"></span></p>
+						</a>
+					</div>
+
+				</div>
+				<div class="mui-slider-indicator mui-text-right">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+			<ul id="list" class="mui-table-view mui-grid-view mui-grid-9">
+				<li class="mui-table-view-cell mui-media mui-col-xs-3 jump-page-flag" data-flag="../pages/results_analysis_header.html">
+					<a href="#">
+						<span class="mui-icon iconfont icon-chengjifenxi iconcolor" style="color: #00bb9c;"></span>
+						<div class="mui-media-body">成绩分析</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-3 jump-page-flag" data-flag="../pages/colleges_daquan.html">
+					<a href="#">
+						<span class="mui-icon iconfont icon-daxue iconcolor" style="color: #11cd6e;"></span>
+						<div class="mui-media-body">院校大全</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-3 jump-page-flag" data-flag="../pages/personalized_recommendation.html">
+					<a href="#">
+						<span class="mui-icon iconfont icon-like iconcolor" style="color: #00BBFF;"></span>
+						<div class="mui-media-body">个性推荐</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-3 jump-page-flag" data-flag="../pages/college_admission_inquiry.html">
+					<a href="#">
+						<span class="mui-icon iconfont icon-chaxun iconcolor" style="color: #9d55b8;"></span>
+						<div class="mui-media-body">省录取信息</div>
+					</a>
+				</li>
+				<!--<li class="mui-table-view-cell mui-media mui-col-xs-3 jump-page-flag" data-flag="../pages/college_employment.html">
+							<a href="#">
+								<span class="mui-icon iconfont icon-jiuye iconcolor" style="color: #f4c600;"></span>
+								<div class="mui-media-body">高校就业</div>
+							</a>
+						</li>-->
+				<li class="mui-table-view-cell mui-media mui-col-xs-3 jump-page-flag" data-flag="../pages/professional_daquan_header.html">
+					<a href="#">
+						<span class="mui-icon iconfont icon-tongjifenxi-copy iconcolor" style="color: #ea8010;"></span>
+						<div class="mui-media-body">专业大全</div>
+					</a>
+				</li>
+				<!--<li class="mui-table-view-cell mui-media mui-col-xs-3 jump-page-flag" data-flag="../pages/professional_employment.html">
+							<a href="#">
+								<span class="mui-icon iconfont icon-tongjifenxi-copy iconcolor" style="color: #eb4f38;"></span>
+								<div class="mui-media-body">专业就业</div>
+							</a>
+						</li>-->
+				<li class="mui-table-view-cell mui-media mui-col-xs-3 jump-page-flag" data-flag="../pages/province_batch_line.html">
+					<a href="#">
+						<span class="mui-icon iconfont icon-fenxi iconcolor" style="color: #00bb9c;"></span>
+						<div class="mui-media-body">省批次线</div>
+					</a>
+				</li>
+				<!--<li class="mui-table-view-cell mui-media mui-col-xs-3 jump-page-flag" data-flag="../pages/encyclopedia_entrance_header.html">
+							<a href="#">
+								<span class="mui-icon iconfont icon-kebiao iconcolor" style="color: #11cd6e;"></span>
+								<div class="mui-media-body">高考百科</div>
+							</a>
+						</li>-->
+				<li class="mui-table-view-cell mui-media mui-col-xs-3 jump-page-flag" data-flag="../pages/industry.html">
+					<a href="#">
+						<span class="mui-icon iconfont icon-icon1 iconcolor" style="color: #11cd6e;"></span>
+						<div class="mui-media-body">职业库</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-3">
+					<a href="#" style="visibility: hidden;">
+						<span class="mui-icon iconfont icon-icon1 iconcolor" style="color: #11cd6e;"></span>
+						<div class="mui-media-body">职业库</div>
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view" id="tifen">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<h4 style="font-weight: normal;">必读</h4><span class="mui-pull-right" style="margin-right: 20px;margin-top: -25px;color: #6d6d72;" id="more">更多</span>
+					</a>
+				</li>
+				<div id="bidu"></div>
+				<script type="text/html" id="biduRe">
+					{{each list as value i}}
+					<li class="mui-table-view-cell detailsFlag" style="height: 120px;" data-newsId="{{list[i].newsId}}">
+						<a style="padding: 5px;">
+							<div style="width: 35%;display: inline-block;float: left;margin-right: 5px;"><img src="{{list[i].image}}" +size+ "" data-preview-src="" style="width: 100%;height: 110px;" /></div>
+							<h4 style="width: 60%;float: right;padding-top: 2px;" class="mui-ellipsis">{{list[i].title}}</h4>
+							<p style="width: 60%;float: right;" class="mui-ellipsis-2">
+								{{list[i].introduce}}
+							</p>
+							<p style="width: 60%;float: right;margin-top: 25px;">
+								<span style="width: 80px;position: absolute;bottom: 5px;float: left;">{{dateFormat(list[i].createTime,"yyyy-MM-dd")}}</span><span style="width: 80px;position: absolute;bottom: 5px;float: right;right: 5px;position: absolute;">阅读  {{list[i].viewedcount}}</span>
+							</p>
+						</a>
+					</li>
+					{{/each}}
+				</script>
+			</ul>
+		</div>
+		
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/template.js"></script>
+		<script type="text/javascript" src="../js/app.js"></script>
+		<script type="text/javascript" src="../js/main_index.js"></script>
+	</body>
+
+</html>

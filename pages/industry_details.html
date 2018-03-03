@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<style>
+			.mui-active {
+				background-color: #FFFFFF !important;
+			}
+			.mui-table-view-cell::after{
+				left: 0px;
+				height: 0px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav line-color common-backgroundcolor">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">详情</h1>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view" id="industryDetails" style="margin-top: 0px;">
+				<script id="industryDetailsRe" type="text/html">
+					{{if list}}
+					<li class="mui-table-view-cell mui-media">
+						<a href="#">
+							<div class="mui-media-body">
+								<h3 style="font-weight: bold;display: inline-block;white-space: normal;color: #00BBFF;border-bottom: 2px solid #00BBFF;font-size: 18px;padding-bottom: 5px;">{{list.occupationName}}</h3>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<p style="width: 100%;white-space: normal;color: #ea8010;">
+							{{list.industry}}</p>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<p style="width: 100%;white-space: normal;color: #000000;text-indent: 2em;">
+							{{list.introduce}}</p>	
+					</li>
+					
+					<li class="mui-table-view-cell mui-media">
+						<div style="color: #00BBFF;font-size: 15px;">工作内容:</div>
+						<p style="width: 100%;white-space: normal;color: #000000;">
+							{{each list.occupationDo as value i}}
+							<span style="color: #00BBFF;font-size: 20px;">•</span>{{list.occupationDo[i]}}</br>{{/each}}
+						</p>
+					</li>
+					
+					<li class="mui-table-view-cell mui-media">
+						<div style="color: #00BBFF;font-size: 15px;">发展前景:</div>
+						<p style="width: 100%;white-space: normal;color: #000000;text-indent: 2em;">
+							{{list.occupationProspect}}</p>	
+					</li>
+					
+					<li class="mui-table-view-cell mui-media">
+						<div style="color: #00BBFF;font-size: 15px;">必备技能:</div>
+						<p style="width: 100%;white-space: normal;color: #000000;">
+							{{each list.skill as value i}}
+							<span style="color: #00BBFF;font-size: 20px;">•</span>{{list.skill[i]}} </br>{{/each}}
+						</p>
+					</li>
+					
+					<li class="mui-table-view-cell mui-media">
+						<div style="color: #00BBFF;font-size: 15px;">相关专业:</div>
+						<p style="width: 100%;white-space: normal;color: #000000;">
+							{{each list.specialty as value i}}
+							<button type="button" class="mui-btn" style="width:'+(20+list.specialty[i])+'%;margin-bottom: 5px;background-color: #00BBFF;border-color: rgba(255,255,255,0.5);color: #FFFFFF;font-size: 68%;padding-left: 5px;padding-right: 5px;">{{list.specialty[i]}}</button>{{/each}}
+						</p>
+					</li>
+					{{/if}}
+				</script>
+			</ul>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/template.js"></script>
+		<script type="text/javascript" src="../js/app.js"></script>
+		<script type="text/javascript" src="../js/industry_details.js"></script>
+	</body>
+
+</html>

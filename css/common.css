@@ -1,0 +1,13 @@
+body,
+.mui-content {
+	background-color: #FFFFFF !important;
+}
+
+.line-color {
+	box-shadow: none;
+	border-bottom: 1px solid gainsboro;
+}
+
+.common-backgroundcolor {
+	background-color: #FFFFFF !important;
+}

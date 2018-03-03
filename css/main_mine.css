@@ -1,0 +1,36 @@
+.mui-content> .mui-table-view:first-child {
+	margin-top: 0px !important;
+}
+
+.mui-grid-view.mui-grid-9  {
+	border-bottom: 1px solid #E3E3E3;
+	background-color: #FFFFFF;
+}
+#listshareing .mui-table-view-cell{
+	border: none !important;
+}
+.iconfont {
+	color: #00BFFF;
+}
+
+.mui-popover {
+	border-radius: 0px !important;
+	height: 150px;
+	width: 100% !important;
+	background-color: #FFFFFF !important;
+}
+
+.mui-popover-arrow {
+	width: 0px !important;
+	height: 0px !important;
+}
+
+#middlePopover {
+	position: fixed;
+	bottom: 0px;
+	text-align: center;
+}
+.mui-table-view::after{
+	height: 0px !important;
+}
+

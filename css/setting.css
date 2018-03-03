@@ -1,0 +1,16 @@
+.mui-table-view-cell::after {
+	left: 0px !important;
+}
+
+.mui-loader {
+	position: absolute;
+	bottom: 20px;
+	left: 5%;
+	width: 90%;
+	height: 40px;
+	padding: 5px;
+	border-radius: 20px;
+	color: #000;
+	font-size: 14px;
+	text-align: center;
+}

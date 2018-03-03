@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/mui.poppicker.css" />
+		<link rel="stylesheet" href="../css/mui.picker.css" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../fonts/iconfont/iconfont.css" />
+		<link rel="stylesheet" href="../css/personalized_recommendation.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav line-color common-backgroundcolor">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">个性推荐</h1>
+		</header>
+		<div class="mui-content">
+			<div id="resultsAnalysis" class="mui-loader"><span class="mui-icon iconfont icon-like mui-btn mui-fab" style="font-size: 50px;background-color: #CCCCCC;width: 100px;height: 100px;color: #FFFFFF;"></span></span>
+				<div>现在没有个性推荐了，赶快去添加成绩吧！</div>
+			</div>
+			<div id="noData" style="display:none;">
+			<ul class="mui-table-view mui-grid-view mui-grid-9" style="border: none;">
+				<li class="mui-table-view-cell mui-media mui-col-xs-3">
+					<a href="#">
+						<span class="mui-icon shape-ci" style="background-color: #11cd6e;width: 60px;height: 60px;padding: 20px 0px;color: white;font-size: 20px;" id="studentTypeValue"></span>
+						<div style="white-space: normal;width: 100%;font-size: 15px;display: block;margin-top: 8px;color: #333;"><span id="getAddress"></span>•<span id="studentType"></span></div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-3" id="area">
+					<a href="#">
+						<span class="mui-icon mui-icon-location shape-ci" style="background-color: #f4c600;width: 60px;height: 60px;padding: 10px 0px;color: white;"></span>
+						<div style="white-space: normal;width: 100%;font-size: 15px;display: block;margin-top: 8px;color: #333;">意向区域•<span id="address"></span></div>
+					</a>
+				</li>
+				<!--<li class="mui-table-view-cell mui-media mui-col-xs-3" id="proBZ">
+					<a href="#">
+						<span class="mui-icon iconfont icon-icon1 shape-ci" style="background-color: #00BBFF;width: 60px;height: 60px;padding: 10px 0px;color: white;"></span>
+						<div class="mui-media-body">意向专业</div>
+					</a>
+				</li>-->
+				<li class="mui-table-view-cell mui-media mui-col-xs-3" id="schoolType">
+					<a href="#">
+						<span class="mui-icon iconfont icon-leixing shape-ci" style="background-color: #9d55b8;width: 60px;height: 60px;padding: 6px 0px;color: white;"></span>
+						<div style="white-space: normal;width: 100%;font-size: 15px;display: block;margin-top: 8px;color: #333;">学校类型•<span id="mySchoolType"></span></div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-3" id="schoolJB">
+					<a href="#">
+						<span class="mui-icon iconfont icon-jibiequanxian shape-ci" style="background-color: #ea8010;width: 60px;height: 60px;padding: 10px 0px;color: white;"></span>
+						<div style="white-space: normal;width: 100%;font-size: 15px;display: block;margin-top: 8px;color: #333;">学校级别•<span id="schoolLB"></span></div>
+					</a>
+				</li>
+			</ul>
+			
+			<ul class="mui-table-view" id="echartsData" style="border-bottom: 8px solid #F2F2F2 !important;">
+				<!--<li class="mui-table-view-cell">
+					<h4 style="font-weight: normal;">走势图</h4>
+				</li>-->
+				<li class="mui-table-view-cell">
+					<div class="chart" id="line1">
+						<div id="spinner" class="mui-spinner" style="position: relative;top: 40%;left: 50%;"></div>
+						<div class="jiazaiz">正在加载</div>
+					</div>
+				</li>
+				<li id="CCID" class="mui-table-view-cell schoolChooseFlag" data-school="可冲刺">
+					<a class="mui-navigate-right">
+						<div class="mui-icon iconfont icon-shandianfahuo01" style="font-size: 50px;color: #eb4f38;"></div>
+						<span style="font-size: 15px;position:absolute;margin-top:15px;">可冲刺学校</span>
+						<span style="font-size: 15px;float: right;position:absolute;right:40px;margin-top:15px;"><span id="chongchiNo" style="color: red;"></span>所</span>
+					</a>
+				</li>
+				<li id="WTID" class="mui-table-view-cell schoolChooseFlag" data-school="稳妥">
+					<a class="mui-navigate-right">
+						<div class="mui-icon iconfont icon-wending" style="font-size: 50px;color: #f4c600;"></div>
+						<span style="font-size: 15px;position:absolute;margin-top:15px;">稳妥学校</span>
+						<span style="font-size: 15px;float: right;position:absolute;right:40px;margin-top:15px;"><span id="wentuoNo" style="color: red;"></span>所</span>
+					</a>
+				</li>
+				<li id="BDID" class="mui-table-view-cell schoolChooseFlag" data-school="保底">
+					<a class="mui-navigate-right">
+						<div class="mui-icon iconfont icon-zhengque" style="font-size: 50px;color: #11cd6e;"></div>
+						<span style="font-size: 15px;position:absolute;margin-top:15px;">保底学校</span>
+						<span style="font-size: 15px;float: right;position:absolute;right:40px;margin-top:15px;"><span id="baodiNo" style="color: red;"></span>所</span>
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view" style="border-bottom: 8px solid #F2F2F2 !important;">
+				<li class="mui-table-view-cell">
+					<h4 style="font-weight: normal;">同分考生选择城市</h4>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="chart" id="pie1"></div>
+				</li>
+			</ul>
+			<ul class="mui-table-view" style="border-bottom: 8px solid #F2F2F2 !important;">
+				<li class="mui-table-view-cell">
+					<h4 style="font-weight: normal;">同分考生选择大学</h4>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="chart" id="line2"></div>
+				</li>
+			</ul>
+			<ul class="mui-table-view" style="border-bottom: 8px solid #F2F2F2 !important;">
+				<li class="mui-table-view-cell">
+					<h4 style="font-weight: normal;">同分考生选择专业</h4>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="chart" id="pie3"></div>
+				</li>
+			</ul>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/mui.picker.js"></script>
+		<script type="text/javascript" src="../js/mui.poppicker.js"></script>
+		<script type="text/javascript" src="../js/template.js"></script>
+		<script type="text/javascript" src="../js/echarts.min.js"></script>
+		<script type="text/javascript" src="../js/app.js"></script>
+		<script type="text/javascript" src="../js/personalized_recommendation.js"></script>
+	</body>
+
+</html>

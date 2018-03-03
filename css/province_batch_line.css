@@ -1,0 +1,9 @@
+.mui-table-view-cell::after{
+	left: 0px !important;
+}
+.chart{
+	height: 300px;
+}
+.mui-table-view-cell.mui-active{
+	background-color: #FFFFFF !important;
+}

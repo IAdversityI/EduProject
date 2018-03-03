@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../fonts/iconfont/iconfont.css" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<style>
+			.mui-table-view-cell::after {
+				left: 0px !important;
+			}
+			
+			.mui-table-view::after {
+				height: 0px !important;
+			}
+			
+			.mui-table-view-cell.mui-active {
+				background-color: #FFFFFF !important;
+			}
+			
+			.mui-popover {
+				height: 70%;
+				width: 100% !important;
+				background-color: #FFFFFF !important;
+				border-radius: 0px !important;
+			}
+			
+			.mui-popover-arrow {
+				width: 0px !important;
+				height: 0px !important;
+			}
+			
+			#middlePopover {
+				position: fixed;
+				top: 45px !important;
+			}
+			
+			.mui-btn.mui-active:enabled,
+			.mui-btn:enabled:active {
+				background-color: #EEEEEE !important;
+				color: #000000;
+			}
+			
+			.mui-input-group .mui-input-row::after {
+				left: 5px !important;
+				right: 5px !important;
+			}
+			.mui-loader {
+				position: absolute;
+				top: 25%;
+				width: 100%;
+				height: 60%;
+				color: #000;
+				font-size: 14px;
+				text-align: center;
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav line-color common-backgroundcolor">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">成绩管理</h1>
+		</header>
+		<div class="mui-content">
+			<div id="performanceMan" class="mui-loader"><span class="mui-icon iconfont icon-iconfontchengji mui-btn mui-fab" style="font-size: 50px;background-color: #CCCCCC;width: 100px;height: 100px;color: #FFFFFF;"></span></span>
+				<div>现在没有成绩了，赶快去添加吧！</div>
+			</div>
+			<div id="middlePopover" class="mui-popover">
+				<ul class="mui-table-view" style="background-color: #FFFFFF;">
+					<li class="mui-table-view-cell" style="text-align: center;background-color: #FFFFFF;">
+						<a href="#">修改成绩</a>
+					</li>
+				</ul>
+				<div id="scrolltop" class="mui-scroll-wrapper" style="margin-top: 45px;">
+					<div class="mui-scroll">
+						<ul class="mui-table-view" style="background-color: #FFFFFF;">
+
+							<form id="kemu" class="mui-input-group">
+
+							</form>
+							<button id="submit" type="button" class="mui-btn mui-btn-success" style="height: 35px;padding:5px 0px 10px 0px;width:80%;margin-left: 10%;margin-top: 10px;">确定</button>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<ul class="mui-table-view" style="margin-top: 0px;">
+				<script id="performanceM" type="text/template">
+					{{if name=="wenke"}}
+					<li class="mui-table-view-cell"><span class="mui-pull-left">文科</span></li>
+					<li class="mui-table-view-cell">
+						<p>
+							<table width="100%" border="1" bordercolor="#dff1fc" style="text-align: center;line-height: 30px;">
+								<tr bgcolor="#eff7ff" style="line-height: 20px;">
+									<td>备注</td>
+									<td>语文</td>
+									<td>数学</td>
+									<td>英语</td>
+									<td>政治</td>
+									<td>历史</td>
+									<td>地理</td>
+									<td colspan="2"><button type="button" class="mui-btn mui-icon mui-icon-trash deleteAllFlag mui-btn-outlined mui-btn-danger" style="padding: 0px 5px;"><span style="font-size: 12px;">全部</span></button></td>
+								</tr>
+								{{each list as value i}}
+								<tr>
+									<td align="left" style="line-height: 20px;" width="40">{{list[i].value.remark}}</td>
+									<td>{{list[i].value.chinese}}</td>
+									<td>{{list[i].value.math}}</td>
+									<td>{{list[i].value.english}}</td>
+									<td>{{list[i].value.politics}}</td>
+									<td>{{list[i].value.history}}</td>
+									<td>{{list[i].value.geography}}</td>
+									<td width="70px"> <button type="button" class="mui-btn mui-icon mui-icon-compose bianjiFlag mui-btn-outlined mui-btn-success" style="padding: 0px 5px;margin: 5px 0px;" data-chinese="{{list[i].value.chinese}}" data-math="{{list[i].value.math}}" data-english="{{list[i].value.english}}" data-politics="{{list[i].value.politics}}" data-history="{{list[i].value.history}}" data-geography="{{list[i].value.geography}}" data-remark="{{list[i].value.remark}}" data-name="{{name}}" data-nameID="{{list[i].name}}"> <button type="button" class="mui-btn mui-icon mui-icon-trash deleteFlag mui-btn-outlined mui-btn-danger" style="padding: 0px 5px;margin: 5px 0px 5px 5px;" data-name="{{list[i].name}}" data-remark="{{list[i].value.remark}}"></td>
+								</tr>
+								{{/each}}
+							</table>
+						</p>
+					</li>
+					{{/if}}
+					{{if name=="like"}}
+					<li class="mui-table-view-cell"><span class="mui-pull-left">理科</span></li>
+					<li class="mui-table-view-cell">
+						<p>
+							<table width="100%" border="1" bordercolor="#dff1fc" style="text-align: center;line-height: 30px;">
+								<tr bgcolor="#eff7ff" style="line-height: 20px;">
+									<td>备注</td>
+									<td>语文</td>
+									<td>数学</td>
+									<td>英语</td>
+									<td>物理</td>
+									<td>化学</td>
+									<td>生物</td>
+									<td colspan="2"><button type="button" class="mui-btn mui-icon mui-icon-trash deleteAllFlag mui-btn-outlined mui-btn-danger" style="padding: 0px 5px;"><span style="font-size: 12px;">全部</span></button></td>
+								</tr>
+								{{each list as value i}}
+								<tr>
+									<td align="left" style="line-height: 20px;" width="40">{{list[i].value.remark}}</td>
+									<td>{{list[i].value.chinese}}</td>
+									<td>{{list[i].value.math}}</td>
+									<td>{{list[i].value.english}}</td>
+									<td>{{list[i].value.physics}}</td>
+									<td>{{list[i].value.chemistry}}</td>
+									<td>{{list[i].value.biology}}</td>
+									<td width="70px"> <button type="button" class="mui-btn mui-icon mui-icon-compose bianjiFlag mui-btn-outlined mui-btn-success" style="padding: 0px 5px;margin: 5px 0px;" data-chinese="{{list[i].value.chinese}}" data-math="{{list[i].value.math}}" data-english="{{list[i].value.english}}" data-physics="{{list[i].value.physics}}" data-chemistry="{{list[i].value.chemistry}}" data-biology="{{list[i].value.biology}}" data-remark="{{list[i].value.remark}}" data-name="{{name}}" data-nameID="{{list[i].name}}"> <button type="button" class="mui-btn mui-icon mui-icon-trash deleteFlag mui-btn-outlined mui-btn-danger" style="padding: 0px 5px;margin: 5px 0px 5px 5px;" data-name="{{list[i].name}}" data-remark="{{list[i].value.remark}}"></td>
+								</tr>
+								{{/each}}
+							</table>
+						</p>
+					</li>
+					{{/if}}
+				</script>
+				<div id="performance" style="text-align: center;">
+
+				</div>
+
+			</ul>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/template.js"></script>
+		<script type="text/javascript" src="../js/app.js"></script>
+		<script type="text/javascript" src="../js/performance_management.js"></script>
+	</body>
+
+</html>

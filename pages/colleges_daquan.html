@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../fonts/iconfont/iconfont.css" />
+		<link rel="stylesheet" href="../css/colleges_daquan.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav line-color common-backgroundcolor">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<!--<div class="mui-input-row" style="position: absolute;left: 40px;right: 10px;top:3px;">
+				<input id="searchInput" type="search" class="mui-input-clear" placeholder="搜索学校" style="background-color: rgba(247,247,247,0.8);">
+			</div>-->
+			<h1 class="mui-title">院校大全</h1>
+		</header>
+		<div class="mui-content" id="collegesdaquan">
+			<div class="mui-content-padded"><button type="button" class="mui-btn mui-btn-block collegedaquanflag" data-isHeader="collegesAll" style="border-color: gainsboro;font-size: 25px;"><span class="mui-icon iconfont icon-yuanquan" style="border-radius: 50%;margin-right: 200px;font-size: 50px !important;color: #00bb9c;position: relative;"><span style="font-size: 10px;position: absolute;margin-top: 19px;margin-left: -35px;">全部</span></span><span style="font-size: 20px;position: absolute;right: 40%;top: 24px;">全部大学</span></button></div>
+			
+			<div class="mui-content-padded"><button type="button" class="mui-btn mui-btn-block collegedaquanflag" data-isHeader="colleges211" style="border-color: gainsboro;font-size: 25px;"><span class="mui-icon iconfont icon-yuanquan" style="border-radius: 50%;margin-right: 200px;font-size: 50px !important;color: #11cd6e;position: relative;"><span style="font-size: 10px;position: absolute;margin-top: 19px;margin-left: -33px;">211</span></span><span style="font-size: 20px;position: absolute;right: 42%;top: 24px;">211大学</span></button></div>
+			
+			<div class="mui-content-padded"><button type="button" class="mui-btn mui-btn-block collegedaquanflag" data-isHeader="colleges985" style="border-color: gainsboro;font-size: 25px;"><span class="mui-icon iconfont icon-yuanquan" style="border-radius: 50%;margin-right: 200px;font-size: 50px !important;color: #00BBFF;position: relative;"><span style="font-size: 10px;position: absolute;margin-top: 19px;margin-left: -33px;">985</span></span><span style="font-size: 20px;position: absolute;right: 42%;top: 24px;">985大学</span></button></div>
+			
+			<div class="mui-content-padded"><button type="button" class="mui-btn mui-btn-block collegedaquanflag" data-isHeader="collegesOrder" style="border-color: gainsboro;font-size: 25px;"><span class="mui-icon iconfont icon-yuanquan" style="border-radius: 50%;margin-right: 200px;font-size: 50px !important; color: #f4c600;position: relative;"><span style="font-size: 10px;position: absolute;margin-top: 19px;margin-left: -35px;">排行</span></span><span style="font-size: 20px;position: absolute;right: 35%;top: 24px;">大学排行榜</span></button></div>
+			
+			<div class="mui-content-padded"><button type="button" class="mui-btn mui-btn-block collegedaquanflag" data-isHeader="collegesYe" style="border-color: gainsboro;font-size: 25px;"><span class="mui-icon iconfont icon-yuanquan" style="border-radius: 50%;margin-right: 200px;font-size: 50px !important; color: #eb4f38;position: relative;"><span style="font-size: 10px;position: absolute;margin-top: 19px;margin-left: -30px;">野</span></span><span style="font-size: 20px;position: absolute;right: 40%;top: 24px;">野鸡大学</span></button></div>
+			
+			<!--<div style="width: 100%;border: 5px solid #F2F2F2;"></div>
+			<div class="mui-content-padded">
+				<h5 style="font-size: 18px;color: #000000;">批次</h5>
+				<ul class="mui-table-view mui-grid-view mui-grid-9" style="background-color: #FFFFFF;">
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 collegedaquanflag">
+						<a href="#">
+							<div class="mui-media-body">本科一</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 collegedaquanflag">
+						<a href="#">
+							<div class="mui-media-body">本科二</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 collegedaquanflag">
+						<a href="#">
+							<div class="mui-media-body">专科一</div>
+						</a>
+					</li>
+				</ul>
+			</div>-->
+			<!--<div style="width: 100%;border: 5px solid #F2F2F2;"></div>
+			<div class="mui-content-padded">
+				<h5 style="font-size: 18px;color: #000000;">地区</h5>
+				<ul class="mui-table-view mui-grid-view mui-grid-9" style="background-color: #FFFFFF;">
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="#">
+							<div class="mui-media-body">贵州</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="#">
+							<div class="mui-media-body">北京</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="#">
+							<div class="mui-media-body">福建</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="#">
+							<div class="mui-media-body">广东</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="#">
+							<div class="mui-media-body">贵州</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="#">
+							<div class="mui-media-body">北京</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="#">
+							<div class="mui-media-body">福建</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="#">
+							<div class="mui-media-body">广东</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="#">
+							<div class="mui-media-body">贵州</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="#">
+							<div class="mui-media-body">北京</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="#">
+							<div class="mui-media-body">福建</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="#">
+							<div class="mui-media-body">广东</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div style="width: 100%;border: 5px solid #F2F2F2;"></div>
+			<div class="mui-content-padded">
+				<h5 style="font-size: 18px;color: #000000;">类别</h5>
+				<ul class="mui-table-view mui-grid-view mui-grid-9" style="background-color: #FFFFFF;">
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="#">
+							<div class="mui-media-body">综合</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="#">
+							<div class="mui-media-body">工科</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="#">
+							<div class="mui-media-body">军事</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="#">
+							<div class="mui-media-body">体育</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="#">
+							<div class="mui-media-body">综合</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="#">
+							<div class="mui-media-body">工科</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="#">
+							<div class="mui-media-body">军事</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="#">
+							<div class="mui-media-body">体育</div>
+						</a>
+					</li>
+				</ul>
+			</div>-->
+		</div>
+		<script src="../js/mui.min.js "></script>
+		<script type="text/javascript" src="../js/app.js"></script>
+		<script type="text/javascript" src="../js/colleges_daquan.js"></script>
+	</body>
+
+</html>

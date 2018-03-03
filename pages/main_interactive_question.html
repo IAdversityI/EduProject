@@ -1,0 +1,441 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../fonts/iconfont/iconfont.css" />
+		<link rel="stylesheet" href="../css/main_interactive.css" />
+		<style>
+			#list img {
+				width: 100% !important;
+			}
+			
+			.icon-to_top {
+				z-index: 0;
+				position: fixed;
+				right: 20px;
+				bottom: 30px;
+				width: 65px;
+				height: 65px;
+				line-height: 36px;
+				text-align: center;
+				border-radius: 50%;
+				color: white;
+				background: rgba(0, 187, 255, 0.3);
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div id="middlePopover" class="mui-popover">
+				<div class="mui-popover-arrow"></div>
+				<ul id="listshareing" class="mui-table-view mui-grid-view mui-grid-9" style="background-color: #FFFFFF;border: none;position: fixed;z-index: 9999;">
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 share-page-flag" data-shareID="weixin" data-shareex="WXSceneSession">
+						<a href="#">
+							<span><img src="../img/weixin.png" width="60" style="margin-top: -10px;"/></span>
+							<div class="mui-media-body" style="margin-top: 0px;">微信好友</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 share-page-flag" data-shareID="weixin" data-shareex="WXSceneTimeline">
+						<a href="#">
+							<span><img src="../img/friendquan.png" width="38"/></span>
+							<div class="mui-media-body">朋友圈</div>
+						</a>
+					</li>
+					<!--<li class="mui-table-view-cell mui-media mui-col-xs-4 share-page-flag" data-shareID="sinaweibo" data-shareex="">
+								<a href="#">
+									<span><img src="../img/sinaweibo.png" width="32"/></span>
+									<div class="mui-media-body">新浪微博</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 share-page-flag" data-shareID="tencentweibo" data-shareex="">
+								<a href="#">
+									<span><img src="../img/tenxun.png" width="25"/></span>
+									<div class="mui-media-body">腾讯微博</div>
+								</a>
+							</li>-->
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 share-page-flag" data-shareID="qq" data-shareex="">
+						<a href="#">
+							<span><img src="../img/qq.png" width="40"/></span>
+							<div class="mui-media-body" style="margin-top: 4px;">QQ</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div id="pullrefresh" class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<ul class="mui-table-view" id="question">
+						<script id="hudong" type="text/html">
+							{{if list}} {{each list as value i}}
+							<li class="mui-table-view-cell mui-media" style="border-bottom: 8px solid #F2F2F2 !important;">
+								<img class="mui-media-object mui-pull-left head-img deatilsimg-flag" id="head-img" src="{{list[i].user.photo}}" style="width: 15%;border-radius: 50%;min-width: 40px;">
+								<div class="mui-media-body deatilscontent-flag" data-communicationID="{{list[i].communication.communicationID}}">
+									{{list[i].user.nickName}} {{if list[i].communication.schoolName!="null" }}
+									<span class="mui-pull-right" style="color: #8f8f94;margin-top: 0px;width: 60px;padding-left: 0px;">{{list[i].communication.schoolName}}</span> {{/if}}
+									<p class="mui-ellipsis">{{list[i].communication.formatDate}}</p>
+
+								</div>
+								<div style="margin-top: 10px;" class="deatilscontent-flag" data-communicationID="{{list[i].communication.communicationID}}">
+									<p style="color: #000000;font-size: 18px;text-indent:2em;margin-bottom: 10px;">{{list[i].communication.content}}</p>
+									<ul id="list" class="mui-table-view mui-grid-view mui-grid-9">
+										{{if list[i].images.length==0}} {{/if}} {{if list[i].images.length==1}}
+										<li class="mui-table-view-cell mui-media mui-col-xs-4 " style="padding: 0px 2.5px;">
+											<a href="#" style="padding: 0px;" class="mui-disabled">
+												<img src="{{list[i].images[0].imageUrl}}" +size+ "" data-preview-src="" data-preview-group="{{list[i].communication.communicationID}}" style="height: 100px;" />
+											</a>
+										</li>
+										{{/if}} {{if list[i].images.length==2}} {{each list[i].images as value j}}
+										<li class="mui-table-view-cell mui-media mui-col-xs-4 " style="padding: 0px 2.5px;">
+											<a href="#" style="padding: 0px;" class="mui-disabled">
+												<img src="{{list[i].images[j].imageUrl}}" +size+ "" data-preview-src="" data-preview-group="{{list[i].communication.communicationID}}" style="height: 100px;" />
+											</a>
+										</li>
+										{{/each}} {{/if}} {{if list[i].images.length==3}} {{each list[i].images as value j}}
+										<li class="mui-table-view-cell mui-media mui-col-xs-4 " style="padding: 0px 2.5px;">
+											<a href="#" style="padding: 0px;" class="mui-disabled">
+												<img src="{{list[i].images[j].imageUrl}}" +size+ "" data-preview-src="" data-preview-group="{{list[i].communication.communicationID}}" style="height: 100px;" />
+											</a>
+										</li>
+										{{/each}} {{/if}} {{if list[i].images.length==4}} {{each list[i].images as value j}}
+										<li class="mui-table-view-cell mui-media mui-col-xs-4 " style="padding: 0px 2.5px;">
+											<a href="#" style="padding: 0px;" class="mui-disabled">
+												<img src="{{list[i].images[j].imageUrl}}" +size+ "" data-preview-src="" data-preview-group="{{list[i].communication.communicationID}}" style="height: 100px;" />
+											</a>
+										</li>
+										{{/each}} {{/if}} {{if list[i].images.length==5}} {{each list[i].images as value j}}
+										<li class="mui-table-view-cell mui-media mui-col-xs-4 " style="padding: 0px 2.5px;">
+											<a href="#" style="padding: 0px;" class="mui-disabled">
+												<img src="{{list[i].images[j].imageUrl}}" +size+ "" data-preview-src="" data-preview-group="{{list[i].communication.communicationID}}" style="height: 100px;" />
+											</a>
+										</li>
+										{{/each}} {{/if}} {{if list[i].images.length==6}} {{each list[i].images as value j}}
+										<li class="mui-table-view-cell mui-media mui-col-xs-4 " style="padding: 0px 2.5px;">
+											<a href="#" style="padding: 0px;" class="mui-disabled">
+												<img src="{{list[i].images[j].imageUrl}}" +size+ "" data-preview-src="" data-preview-group="{{list[i].communication.communicationID}}" style="height: 100px;" />
+											</a>
+										</li>
+										{{/each}} {{/if}} {{if list[i].images.length==7}} {{each list[i].images as value j}}
+										<li class="mui-table-view-cell mui-media mui-col-xs-4 " style="padding: 0px 2.5px;">
+											<a href="#" style="padding: 0px;" class="mui-disabled">
+												<img src="{{list[i].images[j].imageUrl}}" +size+ "" data-preview-src="" data-preview-group="{{list[i].communication.communicationID}}" style="height: 100px;" />
+											</a>
+										</li>
+										{{/each}} {{/if}} {{if list[i].images.length==8}} {{each list[i].images as value j}}
+										<li class="mui-table-view-cell mui-media mui-col-xs-4 " style="padding: 0px 2.5px;">
+											<a href="#" style="padding: 0px;" class="mui-disabled">
+												<img src="{{list[i].images[j].imageUrl}}" +size+ "" data-preview-src="" data-preview-group="{{list[i].communication.communicationID}}" style="height: 100px;" />
+											</a>
+										</li>
+										{{/each}} {{/if}} {{if list[i].images.length==9}} {{each list[i].images as value j}}
+										<li class="mui-table-view-cell mui-media mui-col-xs-4" style="padding: 0px 2.5px;">
+											<a href="#" style="padding: 0px;" class="mui-disabled">
+												<img src="{{list[i].images[j].imageUrl}}" +size+ "" data-preview-src="" data-preview-group="{{list[i].communication.communicationID}}" style="height: 100px;" />
+											</a>
+										</li>
+										{{/each}} {{/if}}
+									</ul>
+								</div>
+								<ul id="list1" class="mui-table-view mui-grid-view mui-grid-9" style="height: 40px;border: none ;padding-top: 15px;">
+									<li class="mui-table-view-cell mui-media mui-col-xs-4" style="height: 40px;border: none;padding-top:0px;">
+										<a data-communicationID="{{list[i].communication.communicationID}}" data-shoucangID="{{list[i].communication.communicationID}}" data-shoucanglikes="{{list[i].communication.likes}}" href="#" style="font-size: 100%;color: #ea8010 !important;" class="mui-icon iconfont icon-shoucangcang shoucang-changeflag">
+											<span id="{{list[i].communication.communicationID}}" style="font-size: 12px;color:#ea8010;padding: 2px 0px 10px 2px;position: absolute;">{{list[i].communication.likes}}</span>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media mui-col-xs-4 clickshare-page-flag" style="height: 40px;border: none;padding-top:0px;padding-left:0px;">
+										<a href="#" style="font-size: 100%;" class="mui-icon iconfont icon-zuihouyibanfenxiang">
+											<span style="font-size: 12px;padding: 2px 0px 10px 2px;position: absolute;">分享</span>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media mui-col-xs-4 deatilscontent-flag" style="height: 40px;border: none;padding-top:0px;" data-communicationID="{{list[i].communication.communicationID}}">
+										<a href="#" style="font-size: 100%;" class="mui-icon iconfont icon-pinglun">
+											<span style="font-size: 12px;padding: 2px 0px 10px 2px;position: absolute;">{{list[i].commontNo}}</span>
+										</a>
+									</li>
+
+								</ul>
+							</li>
+							{{/each}} {{/if}}
+						</script>
+					</ul>
+				</div>
+			</div>
+			<div id="gototop" class="icon-to_top">
+				<p class="iconfont icon-tianjia-copy" style="background-color: rgba(0,187,255,0.8);border-radius: 50%;width: 55px;height: 55px;font-size: 28px;padding-top: 10px;margin-top: 5px;margin-left: 5px;color: #FFFFFF !important;"></p>
+			</div>
+
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/template.js"></script>
+		<script src="../js/mui.zoom.js"></script>
+		<script src="../js/mui.previewimage.js"></script>
+		<script type="text/javascript" src="../js/app.js"></script>
+		<script type="text/javascript">
+			/*刷新初始化*/
+			mui.init({
+				pullRefresh: {
+					container: "#pullrefresh",
+					down: {
+						height: 110,
+						callback: pulldownRefresh
+					},
+					up: {
+						contentrefresh: "正在加载...",
+						contentnomore: "暂无更多",
+						callback: pullupRefresh
+					}
+				}
+			});
+
+			function pulldownRefresh() {
+				getDataQuestion();
+			}
+
+			function pullupRefresh() {
+				getDataQuestionup();
+			}
+			mui.previewImage();
+			var shares = {};
+			mui.plusReady(function() {
+				plus.share.getServices(function(s) {
+					if(s && s.length > 0) {
+						for(var i = 0; i < s.length; i++) {
+							var t = s[i];
+							shares[t.id] = t;
+						}
+					}
+				}, function() {
+					console.log("获取分享服务列表失败");
+				});
+				getDataQuestion();
+			})
+
+			function getDataQuestion() {
+				page = 1;
+				if(App.noNetwork()) {
+					/*App.afreshWebview("0", "0", "afresh5.html");*/
+					plus.nativeUI.closeWaiting();
+					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(true);
+				} else {
+					var url = App.url + '/communication/communicationList/question';
+					var dataOptions = {
+						page: 1
+					};
+					var success = function(data) {
+						/*var afresh = App.getWebviewID("afresh5.html");
+						if(afresh) {
+							afresh.close();
+						}*/
+						if(data.status) {
+							paraData(data.result.datas, "question");
+						} else {
+							mui.toast(data.result);
+							if(data.signal == 1) {
+								App.removeItem("tokenflag");
+								var url = "../pages/login.html";
+								var id = "../pages/login.html";
+								var extras = {};
+								App.openWindow(url, id, extras);
+							}
+						}
+						mui('#pullrefresh').pullRefresh().endPulldownToRefresh(true);
+					};
+					var dataType = "json";
+					App.ajaxNoWait(url, dataOptions, success, dataType);
+
+				}
+			}
+			/*渲染数据方法*/
+			function paraData(result, id) {
+				var option = {
+					list: result,
+					size: "@20p"
+				};
+				var templatehtml = template("hudong", option);
+				App.getID(id).innerHTML = templatehtml;
+			}
+
+			function getDataQuestionup() {
+				if(App.noNetwork()) {
+					/*App.afreshWebview("0", "0", "afresh5.html");*/
+					mui('#pullrefresh').pullRefresh().endPullupToRefresh(true);
+				} else {
+					page++;
+					var url = App.url + '/communication/communicationList/question';
+					var dataOptions = {
+						page: page
+					};
+					var success = function(data) {
+						if(data.status) {
+							var option = {
+								list: data.result.datas,
+								size: "@20p"
+							};
+							var templatehtml = template("hudong", option);
+							var question = document.body.querySelector("#question");
+							var spanflag = App.getID("question").querySelectorAll(".spanflag");
+							for(var g = spanflag.length, l = g + 1; g < l; g += 1) {
+								var span = document.createElement("span");
+								span.className = "spanflag";
+								span.innerHTML = templatehtml;
+								question.appendChild(span);
+							}
+						} else {
+							mui.toast(data.result);
+							if(data.signal == 1) {
+								App.removeItem("tokenflag");
+								var url = "../pages/login.html";
+								var id = "../pages/login.html";
+								var extras = {};
+								App.openWindow(url, id, extras);
+							}
+						}
+						mui('#pullrefresh').pullRefresh().endPullupToRefresh(true);
+						mui.later(function() {
+							mui('#pullrefresh').pullRefresh().refresh(true);
+						}, 1000)
+					}
+					var dataType = "json";
+					App.ajaxNoWait(url, dataOptions, success, dataType);
+				}
+			}
+			/*分享按钮*/
+			mui('#pullrefresh').on('tap', '.clickshare-page-flag', function() {
+				mui("#middlePopover").popover("toggle");
+			});
+			/*分享*/
+			function shareMessage(share, ex) {
+				var msg = {
+					extra: {
+						scene: ex
+					}
+				};
+				msg.href = App.url + "/download/" + App.getItem("tokenflag");
+				msg.title = "成绩分析大师";
+				msg.content = "成绩分析大师，领先的高考升学大数据平台。为学生提供考试成绩分析、成绩跟踪、自我定位、高考选校选专业等服务。通过对历年高考录取大数据分析，结合职业兴趣评测、大学专业就业情况分析，帮助高中生明确个人目标、清晰全省排名，结合学生兴趣制定可量化的、个性化的备考方案，助力学生成长。";
+				msg.thumbs = ["_www/img/logo.png"];
+				share.send(msg, function() {
+					console.log("分享到\"" + share.description + "\"成功！ ");
+				}, function(e) {
+					console.log("分享到\"" + share.description + "\"失败: " + e.code + " - " + e.message);
+				});
+			}
+			/*点击分享按钮*/
+			mui('#listshareing').on('tap', '.share-page-flag', function() {
+				var datashareID = this.getAttribute('data-shareID');
+				var datashareex = this.getAttribute("data-shareex");
+				var share = shares[datashareID];
+				if(share) {
+					if(share.authenticated) {
+						shareMessage(share, datashareex);
+					} else {
+						share.authorize(function() {
+							shareMessage(share, datashareex);
+						}, function(e) {
+							console.log("认证授权失败：" + e.code + " - " + e.message);
+						});
+					}
+				} else {
+					mui.toast("无法获取分享服务，请检查manifest.json中分享插件参数配置，并重新打包")
+				}
+			});
+
+			function openDetailsHeader() {
+				var url = "../pages/main_details_header.html";
+				var id = "../pages/main_details_header.html";
+				var extras = {};
+				App.openWindow(url, id, extras);
+			}
+			/*点击列表*/
+			mui("#pullrefresh").on('tap', '.deatilscontent-flag', function() {
+					var communicationID = this.getAttribute("data-communicationID");
+					App.setItem("communicationIDContFlag", communicationID);
+					openDetailsHeader();
+				})
+				/*收藏*/
+			function shoucang(collectID, shoucangID, shoucanglikes) {
+				var url = App.url + '/communication/addLikes';
+				var dataOptions = {
+					communicationID: collectID
+				};
+				var success = function(data) {
+					if(data.status) {
+						shoucanglikes++;
+						App.getID(shoucangID).innerText = shoucanglikes;
+					} else {
+						mui.toast(data.result);
+						if(data.signal == 1) {
+							App.removeItem("tokenflag");
+							var url = "../pages/login.html";
+							var id = "../pages/login.html";
+							var extras = {};
+							App.openWindow(url, id, extras);
+						}
+					}
+				};
+				var dataType = "json";
+				App.ajaxNoWait(url, dataOptions, success, dataType);
+			}
+			mui("#pullrefresh").on('tap', '.shoucang-changeflag', function() {
+					var collectID = this.getAttribute("data-communicationID");
+					var shoucangID = this.getAttribute("data-shoucangID");
+					var shoucanglikes = this.getAttribute("data-shoucanglikes");
+					shoucang(collectID, shoucangID, shoucanglikes);
+				})
+				/*重新加载数据按钮*/
+			function refreshData() {
+				plus.nativeUI.showWaiting("  正在加载...  ");
+				if(App.noNetwork()) {
+					plus.nativeUI.closeWaiting();
+				} else {
+					getDataQuestion();
+				}
+			}
+			/*发布内容之后调刷新*/
+			function distribuRefresh() {
+				plus.nativeUI.showWaiting("  正在加载...  ");
+				getDataQuestion();
+			}
+			/*点击添加*/
+			App.getID("gototop").addEventListener("tap", function() {
+					var token = App.getItem("tokenflag");
+					if(token) {
+						mui.openWindow({
+							url: "../pages/post_content.html",
+							id: "../pages/post_content.html",
+							waiting: {
+								autoShow: true
+							},
+							show: {
+								aniShow: "slide-in-bottom"
+							}
+						})
+					} else {
+						mui.openWindow({
+							url: "../pages/login.html",
+							id: "../pages/login.html",
+							waiting: {
+								autoShow: true
+							},
+							show: {
+								aniShow: "slide-in-bottom"
+							}
+						})
+					}
+				})
+				/*mui('body').on('shown', '.mui-popover', function(e) {
+					//console.log('shown', e.detail.id);//detail为当前popover元素
+					mui('#pullrefresh').pullRefresh().setStopped(true);
+				});
+				mui('body').on('hidden', '.mui-popover', function(e) {
+					//console.log('hidden', e.detail.id);//detail为当前popover元素
+					mui('#pullrefresh').pullRefresh().setStopped(false);
+				});*/
+		</script>
+	</body>
+
+</html>

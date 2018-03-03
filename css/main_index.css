@@ -1,0 +1,204 @@
+html{
+	font-size: 62.5%;
+}
+body {
+	background-color: #FFFFFF;
+}
+.mui-content{
+	background-color: #FFFFFF;
+}
+.iconcolor{
+	color: #00BFFF;
+}
+.address-pos {
+	color: #000000;
+	font-size: 15px !important;
+	padding-top: 15px !important;
+}
+
+#mainIndex_title_left {
+	color: #000000;
+}
+.mui-slider-title{
+	background-color: #FFFFFF;
+	color: #000;
+}
+.line-color {
+	box-shadow: none;
+	border-bottom: 1px solid gainsboro;
+}
+
+.common-backgroundcolor,
+.mui-content {
+	background-color: #FFFFFF !important;
+}
+
+.button-height {
+	height: 30px;
+	font-size: 18px !important;
+	top: 10px !important;
+}
+
+.mainIndex-title {
+	right: 20px !important;
+	left: 80px !important;
+}
+
+.mui-media-body {
+	height: 30px !important;
+	white-space: normal;
+}
+
+.mui-grid-view.mui-grid-9 {
+	background-color: #FFFFFF !important;
+}
+
+.mui-grid-view.mui-grid-9 .mui-table-view-cell {
+	border-bottom: 1px solid #E3E3E3;
+	background-color: #FFFFFF;
+}
+
+.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body {
+	font-size:1.2rem;
+}
+.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+	padding: 0px !important;
+}
+body {
+	background-color: #FFFFFF !important;
+}
+
+.common-backgroundcolor {
+	background-color: #FFFFFF !important;
+}
+.mui-bar-tab .mui-tab-item.mui-active{
+	color: #00BFFF;
+}
+.mui-tab-label {
+	font-size: 15px !important;
+}
+
+.button-height {
+	text-align: left;
+	background-color: rgba(255,255,255,0.8);
+	border-radius: 16px;
+	padding-left: 10px !important;
+}
+
+.address-pos {
+	font-size: 15px !important;
+	margin-left: -8px;
+	margin-top: -8px;
+	font-family: sans-serif;
+	width: 60px;
+	display: inline-block;
+}
+.mui-bar-transparent{
+	background-color: rgba(255,255,255,0);
+}
+html{
+	font-size: 62.5%;
+}
+body {
+	background-color: #FFFFFF;
+}
+.mui-content{
+	background-color: #FFFFFF;
+}
+.iconcolor{
+	color: #00BFFF;
+}
+.address-pos {
+	color: #000000;
+	font-size: 15px !important;
+	padding-top: 15px !important;
+}
+
+#mainIndex_title_left {
+	color: #000000;
+}
+.mui-slider-title{
+	background-color: #FFFFFF;
+	color: #000;
+}
+.line-color {
+	box-shadow: none;
+	border-bottom: 1px solid gainsboro;
+}
+
+.common-backgroundcolor,
+.mui-content {
+	background-color: #FFFFFF !important;
+}
+
+.button-height {
+	height: 30px;
+	font-size: 18px !important;
+	top: 10px !important;
+}
+
+.mainIndex-title {
+	right: 20px !important;
+	left: 80px !important;
+}
+
+.mui-media-body {
+	height: 30px !important;
+	white-space: normal;
+}
+
+.mui-grid-view.mui-grid-9 {
+	background-color: #FFFFFF !important;
+}
+
+.mui-grid-view.mui-grid-9 .mui-table-view-cell {
+	border-bottom: 1px solid #E3E3E3;
+	background-color: #FFFFFF;
+}
+
+.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body {
+	font-size:1.2rem;
+}
+.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+	padding: 0px !important;
+}
+body {
+	background-color: #FFFFFF !important;
+}
+
+.common-backgroundcolor {
+	background-color: #FFFFFF !important;
+}
+.mui-bar-tab .mui-tab-item.mui-active{
+	color: #00BFFF;
+}
+.mui-tab-label {
+	font-size: 15px !important;
+}
+
+.button-height {
+	opacity: 1;
+	text-align: left;
+	background-color: #FFFFFF;
+	border-radius: 16px;
+	padding-left: 10px !important;
+}
+
+.address-pos {
+	font-size: 15px !important;
+	margin-left: -8px;
+	margin-top: -8px;
+	font-family: sans-serif;
+	width: 60px;
+	display: inline-block;
+}
+.mui-bar-transparent{
+	background-color: rgba(255,255,255,0);
+}
+#tifen.mui-table-view::before{
+	height: 0px !important;
+}
+.mui-table-view-cell::after{
+	left: 0px;
+}
+

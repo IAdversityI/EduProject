@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/mui.poppicker.css" />
+		<link rel="stylesheet" href="../css/mui.picker.css" />
+		<link rel="stylesheet" href="../fonts/iconfont/iconfont.css" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/colleges_details_body.css" />
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider mui-fullscreen">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted" style="height: 40px;padding-top: 5px;">
+					<a class="mui-control-item mui-active" href="#item1">
+						录取分数线
+					</a>
+					<a class="mui-control-item" href="#item2">
+						学校概况
+					</a>
+					<a class="mui-control-item" href="#item3">
+						招生简章
+					</a>
+					<a class="mui-control-item" href="#item4">
+						在招专业
+					</a>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3"></div>
+				<div class="mui-slider-group">
+					<div id="item1" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul id="gailv" class="mui-table-view mui-grid-view mui-grid-9" style="border-bottom: 8px solid #F2F2F2 !important;background-color: #FFFFFF;">
+									<li class="mui-table-view-cell mui-media mui-col-xs-6">
+										<a href="#">
+											<span class="mui-icon">
+												<div class="r_out">
+													<div class="r_in">
+													<div style="height: 0%;" class="r_c c1" id="fenshuheight1"></div>
+													<div class="r_num" id="fenshu1"></div>
+													</div>
+												</div>
+											</span>
+											<div class="mui-media-body" id="fenshuCon1"></div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media mui-col-xs-6">
+										<a href="#">
+											<span class="mui-icon">
+												<div class="r_out">
+													<div class="r_in">
+													<div style="height: 0%;" class="r_c c2" id="fenshuheight2"></div>
+													<div class="r_num" id="fenshu2"></div>
+													</div>
+												</div>
+											</span>
+											<div class="mui-media-body" id="fenshuCon2">我的分数</div>
+										</a>
+									</li>
+								</ul>
+
+								<ul class="mui-table-view" style="border-bottom: 8px solid #F2F2F2 !important;">
+
+									<li class="mui-table-view-cell">
+										<p class="mui-ellipsis" style="width: 100%;white-space: normal;">
+											<span style="float: left;width: 33%;"><h4 style="font-weight: normal;display: inline-block;width: 90px;">录取分数线</h4></span>
+											<span style="float: right;width: 67%;">
+											<button id="pici" type="button" class="mui-btn mui-icon iconfont icon-jiantoudown mui-right chooseButtonFlag" style="margin-bottom: 5px;background-color: #00BBFF;border-color: rgba(255,255,255,0.5);color: #FFFFFF;float: right;width: 32%;padding: 5px 10px;">录取批次</button>
+											<button id="kind" type="button" class="mui-btn mui-icon iconfont icon-jiantoudown mui-right chooseButtonFlag" style="margin-bottom: 5px;background-color: #00BBFF;border-color: rgba(255,255,255,0.5);color: #FFFFFF;float: right;width: 32%;padding: 5px 10px;">科属</button>
+											<button id="area" type="button" class="mui-btn mui-icon iconfont icon-jiantoudown mui-right chooseButtonFlag" style="margin-bottom: 5px;background-color: #00BBFF;border-color: rgba(255,255,255,0.5);color: #FFFFFF;float: right;width: 32%;padding: 5px 10px;">地区</button>
+											</span>
+										</p>
+									</li>
+									<ul class="mui-table-view">
+										<li class="mui-table-view-cell">
+											<div class="chart" id="line1"></div>
+										</li>
+									</ul>
+
+								</ul>
+
+								<ul class="mui-table-view" style="border-bottom: 8px solid #F2F2F2 !important;">
+									<li class="mui-table-view-cell">
+										<p class="mui-ellipsis" style="width: 100%;white-space: normal;">
+											<span style="float: left;width: 33%;"><h4 style="font-weight: normal;display: inline-block;width: 90px;">各专业录取分数线</h4></span>
+											<span style="float: right;width: 67%;">
+											<button id="lkind" type="button" class="mui-btn mui-icon iconfont icon-jiantoudown mui-right chooseButtonFlag" style="margin-bottom: 5px;background-color: #00BBFF;border-color: rgba(255,255,255,0.5);color: #FFFFFF;float: right;width: 32%;padding: 5px 10px;">类型</button>
+											<button id="lyear" type="button" class="mui-btn mui-icon iconfont icon-jiantoudown mui-right chooseButtonFlag" style="margin-bottom: 5px;background-color: #00BBFF;border-color: rgba(255,255,255,0.5);color: #FFFFFF;float: right;width: 32%;padding: 5px 10px 5px 5px;">年份</button>
+											<button id="larea" type="button" class="mui-btn mui-icon iconfont icon-jiantoudown mui-right chooseButtonFlag" style="margin-bottom: 5px;background-color: #00BBFF;border-color: rgba(255,255,255,0.5);color: #FFFFFF;float: right;width: 32%;padding: 5px 10px;">地区</button>
+											</span>
+										</p>
+									</li>
+									<script id="professional" type="text/template">
+
+										<p>
+											<table width="100%" border="0" bordercolor="#dff1fc" style="text-align: center;line-height:50px;margin-top: -10px;">
+												<tr bgcolor="#eff7ff">
+													<td width="20%">专业名称</td>
+													<td width="20%">年份</td>
+													<td width="20%">平均分</td>
+													<td width="20%">最高分</td>
+													<td>录取批次</td>
+												</tr>
+											</table>
+											{{each list as value i}}
+											<table width="100%" border="0" bordercolor="#dff1fc" style="text-align: center;">
+												<li class="mui-table-view-cell" style="margin-top: -20px;">
+													<tr>
+														<td style="width: 20%;padding-left: 5px;" align="left">{{list[i].specialtyName}}</td>
+														<td width="20%">{{list[i].year}}</td>
+														<td width="20%">{{list[i].average}}</td>
+														<td width="20%">{{list[i].maxScore}}</td>
+														<td>{{list[i].admissionBatch}}</td>
+													</tr>
+
+												</li>
+											</table>
+											{{/each}}
+
+										</p>
+
+									</script>
+									<div id="professionalFen" style="text-align: center;">
+
+									</div>
+								</ul>
+
+							</div>
+						</div>
+					</div>
+					<div id="item2" class="mui-slider-item mui-control-content">
+						<div id="scroll2" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view" style="border-bottom: 8px solid #F2F2F2 !important;" id="baseInfo">
+									<script id="baseIn" type="text/html">
+										{{if list}}
+										<li class="mui-table-view-cell">
+											<h4 style="font-weight: normal;">基本信息</h4>
+										</li>
+										{{each baseInfo as value i}}
+										<li class="mui-table-view-cell">
+											<p class="mui-ellipsis"><span style="float: left;width: 30%;white-space: normal;">{{baseInfo[i].name}}</span><span style="float: right;width: 70%;white-space: normal;color: #000000;">{{baseInfo[i].value}}</span></p>
+										</li>
+										{{/each}} {{/if}}
+									</script>
+								</ul>
+								<ul class="mui-table-view" style="border-bottom: 8px solid #F2F2F2 !important;">
+									<li class="mui-table-view-cell">
+										<h4 style="font-weight: normal;">学校简介</h4>
+									</li>
+									<li class="mui-table-view-cell mui-collapse" id="accordion">
+										<span id="bufenContent">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="collegeIntroducebufen"></span></span>
+										<div style="width: 100%;text-align: center;">
+											<a class="mui-icon iconfont icon-jiantoukongdown" href="#" style="font-size: 20px;margin-top: 10px;width: 100%;color: #000000;" id="accordionimg"></a>
+										</div>
+										<div class="mui-collapse-content">
+											<span id="bufenContentAll">
+												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="collegeIntroducezt"></span></span>
+											<div style="width: 100%;text-align: center;">
+												<a class="mui-icon iconfont icon-jiantoukongup" href="#" style="font-size: 20px;margin-top: 10px;width: 100%;color: #000000;display: none;" id="accordionimgxia"></a>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item3" class="mui-slider-item mui-control-content">
+						<div id="scroll3" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										<h4 id="brochuresName" style="text-align: center;font-weight: normal;"></h4>
+										<p id="brochuresDetails" style="color: #000000;"></p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item4" class="mui-slider-item mui-control-content">
+						<div id="scroll4" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view mui-grid-view mui-grid-9" style="background-color: #FFFFFF;" id="xiaoyuan">
+									<script id="xiaoyuanRe" type="text/html">
+										{{if list}} {{each list as value i}}
+										<li class="mui-table-view-cell mui-media mui-col-xs-12">
+											<a href="#" style="color: #000000;">
+												{{list[i]}}
+											</a>
+										</li>
+										{{/each}} {{/if}}
+									</script>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="../js/mui.picker.js"></script>
+		<script type="text/javascript" src="../js/mui.poppicker.js"></script>
+		<script type="text/javascript" src="../js/echarts.min.js"></script>
+		<script type="text/javascript" src="../js/radialIndicator.min.js"></script>
+		<script type="text/javascript" src="../js/template.js"></script>
+		<script src="../js/mui.zoom.js"></script>
+		<script src="../js/mui.previewimage.js"></script>
+		<script type="text/javascript" src="../js/app.js"></script>
+		<script type="text/javascript" src="../js/colleges_details_body.js"></script>
+	</body>
+
+</html>

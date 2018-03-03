@@ -1,0 +1,177 @@
+	body,
+	.mui-content {
+		background-color: #FFFFFF !important;
+	}
+	
+	.line-color {
+		box-shadow: none;
+		border-bottom: 1px solid gainsboro;
+	}
+	
+	.common-backgroundcolor {
+		background-color: #FFFFFF !important;
+	}
+	
+	.chart {
+		width: 100%;
+		height: 300px;
+		margin: 0px;
+		padding: 0px;
+	}
+	
+	h5 {
+		margin-top: 30px;
+		font-weight: bold;
+	}
+	
+	h5:first-child {
+		margin-top: 15px;
+	}
+	
+	.mui-loader {
+		position: absolute;
+		top: 25%;
+		width: 100%;
+		height: 60%;
+		color: #000;
+		font-size: 14px;
+		text-align: center;
+		display: none;
+	}
+	
+	.mui-popover {
+		height: 85%;
+		width: 100% !important;
+		background-color: #FFFFFF !important;
+		border-radius: 0px !important;
+	}
+	
+	.mui-popover-arrow {
+		width: 0px !important;
+		height: 0px !important;
+	}
+	
+	#middlePopover {
+		position: fixed;
+		top: 0px !important;
+	}
+	
+	.mui-table-view-cell::after {
+		left: 0px !important;
+	}
+	
+	.mui-input-group .mui-input-row::after {
+		left: 5px !important;
+		right: 5px !important;
+	}
+	
+	.ui-alert {
+		text-align: center;
+		padding: 20px 10px;
+		font-size: 16px;
+	}
+	
+	.mui-bar~.mui-content .mui-fullscreen {
+		top: 44px;
+		height: auto;
+	}
+	
+	.mui-pull-top-tips {
+		position: absolute;
+		top: -20px;
+		left: 50%;
+		margin-left: -25px;
+		width: 40px;
+		height: 40px;
+		border-radius: 100%;
+		z-index: 1;
+	}
+	
+	.mui-bar~.mui-pull-top-tips {
+		top: 24px;
+	}
+	
+	.mui-pull-top-wrapper {
+		width: 42px;
+		height: 42px;
+		display: block;
+		text-align: center;
+		background-color: #efeff4;
+		border: 1px solid #ddd;
+		border-radius: 25px;
+		background-clip: padding-box;
+		box-shadow: 0 4px 10px #bbb;
+		overflow: hidden;
+	}
+	
+	.mui-pull-top-tips.mui-transitioning {
+		-webkit-transition-duration: 200ms;
+		transition-duration: 200ms;
+	}
+	
+	.mui-pull-top-tips .mui-pull-loading {
+		/*-webkit-backface-visibility: hidden;
+				-webkit-transition-duration: 400ms;
+				transition-duration: 400ms;*/
+		margin: 0;
+	}
+	
+	.mui-pull-top-wrapper .mui-icon,
+	.mui-pull-top-wrapper .mui-spinner {
+		margin-top: 7px;
+	}
+	
+	.mui-pull-top-wrapper .mui-icon.mui-reverse {
+		/*-webkit-transform: rotate(180deg) translateZ(0);*/
+	}
+	
+	.mui-pull-bottom-tips {
+		text-align: center;
+		background-color: #FFFFFF;
+		font-size: 15px;
+		line-height: 40px;
+		color: #777;
+	}
+	
+	.mui-pull-top-canvas {
+		overflow: hidden;
+		background-color: #fafafa;
+		border-radius: 40px;
+		box-shadow: 0 4px 10px #bbb;
+		width: 40px;
+		height: 40px;
+		margin: 0 auto;
+	}
+	
+	.mui-pull-top-canvas canvas {
+		width: 40px;
+	}
+	
+	.mui-slider-indicator.mui-segmented-control {
+		background-color: #FFFFFF;
+	}
+	
+	.mui-fullscreen {
+		height: 100%;
+	}
+	
+	.mui-control-content .mui-loading {
+		margin-top: 50px;
+	}
+	
+	.mui-segmented-control .mui-control-item {
+		line-height: 30px;
+	}
+	
+	.mui-btn.mui-active:enabled,
+	.mui-btn:enabled:active {
+		background-color: #EEEEEE !important;
+		color: #000000;
+	}
+	
+	.mui-table-view-cell.mui-active {
+		background-color: #FFFFFF !important;
+	}
+	#paihang .mui-table-view-cell{
+		border: none !important;
+	}

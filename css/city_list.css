@@ -1,0 +1,16 @@
+html,
+body {
+	height: 100%;
+	overflow: hidden;
+}
+
+.mui-bar {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.mui-table-view-icon .mui-table-view-cell::after{
+	left: 0px !important;
+}
+.mui-navigate-right{
+	margin-right: 10px !important;
+}

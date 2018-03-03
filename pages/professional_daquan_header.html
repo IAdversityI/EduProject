@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../fonts/iconfont/iconfont.css" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<style>
+			.mui-table-view-cell {
+				border: none !important;
+			}
+			
+			.mui-grid-view {
+				border: none !important;
+			}
+			
+			.mui-active {
+				height: 50px;
+			}
+			
+			.mui-bar-nav~ .mui-content .mui-pull-top-pocket {
+				top: 90px !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav line-color common-backgroundcolor">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">专业大全</h1>
+		</header>
+		<header id="profession" class="mui-bar mui-bar-nav line-color common-backgroundcolor" style="margin-top: 45px;background-color: red;">
+			<h1 class="mui-title" style="left: 0px;right: 0px;"><ul class="mui-table-view mui-grid-view mui-grid-9" style="background-color: #FFFFFF;height: 43px;">
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 arrowflag" style="padding: 0px;margin-top: -4px;" data-arrowdownID="arrowdown1">
+						<a href="#">
+							<div class="mui-media-body"><span id="undergraduateCourse" style="width: 50px;display: inline-block;" class="mui-ellipsis">本科</span><span id="arrowdown1" class="mui-icon iconfont icon-jiantoudown" style="font-size: 15px;"></span></div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 arrowflag" style="padding: 0px;margin-top: -4px;" data-arrowdownID="arrowdown2">
+						<a href="#">
+							<div class="mui-media-body"><span id="specialist" style="width: 50px;display: inline-block;" class="mui-ellipsis">专科</span><span id="arrowdown2" class="mui-icon iconfont icon-jiantoudown" style="font-size: 15px;"></span></div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 arrowflag" style="padding: 0px;margin-top: -4px;" data-arrowdownID="arrowdown3">
+						<a href="#">
+							<div class="mui-media-body"><span id="filter" style="width: 50px;display: inline-block;" class="mui-ellipsis">筛选</span><span id="arrowdown3" class="mui-icon iconfont icon-jiantoudown" style="font-size: 15px;"></span></div>
+						</a>
+					</li>
+				</ul></h1>
+		</header>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/app.js"></script>
+		<script type="text/javascript">
+			//mui初始化
+			mui.init({
+				subpages: [{
+					url: 'professional_daquan.html',
+					id: 'professional_daquan.html',
+					styles: {
+						top: '90px', //mui标题栏默认高度为45px；
+						bottom: '0px' //默认为0px，可不定义；
+					}
+				}]
+			});
+			mui('#profession').on('tap', '.arrowflag', function() {
+				var arrowID = this.getAttribute("data-arrowdownID");
+				/*if(App.getID(arrowID).classList.contains("icon-jiantoudown")) {
+					App.getID(arrowID).classList.add("icon-jiantouup");
+					App.getID(arrowID).classList.remove("icon-jiantoudown");
+					
+				} else {
+					App.getID(arrowID).classList.add("icon-jiantoudown");
+					App.getID(arrowID).classList.remove("icon-jiantouup");
+					App.evalJS("professional_daquan.html", "personalizedFloatWeb(\"" + arrowID + "\")");
+				}*/
+				App.evalJS("professional_daquan.html", "personalizedFloatWeb(\"" + arrowID + "\")");
+
+			});
+
+			/*function isArraychange(id) {
+				for(var i = 1; i < 4; i++) {
+					if(App.getID("arrowdown" + i).classList.contains("icon-jiantouup")) {
+						App.getID("arrowdown" + i).classList.add("icon-jiantoudown");
+						App.getID("arrowdown" + i).classList.remove("icon-jiantouup");
+					}
+				}
+			}*/
+			/*本科专科筛选刷新*/
+			function areaFresh(citykindSxuan, inID) {
+				if(inID == "undergraduateCourse") {
+					App.removeItem("specialistFlag");
+					App.removeItem("filterFlag");
+					App.removeItem("firstProFlag");
+					App.getID("specialist").innerText = "专科";
+					App.getID("filter").innerText = "筛选";
+				} else if(inID == "specialist") {
+					App.removeItem("undergraduateCourseFlag");
+					App.removeItem("filterFlag");
+					App.removeItem("firstProFlag");
+					App.getID("undergraduateCourse").innerText = "本科";
+					App.getID("filter").innerText = "筛选";
+				} else if(inID == "filter") {
+					App.removeItem("undergraduateCourseFlag");
+					App.removeItem("specialistFlag");
+					App.removeItem("firstProFlag");
+					App.getID("undergraduateCourse").innerText = "本科";
+					App.getID("specialist").innerText = "专科";
+				}
+				App.getID(inID).innerText = citykindSxuan;
+			}
+		</script>
+	</body>
+
+</html>

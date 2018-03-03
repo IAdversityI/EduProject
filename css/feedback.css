@@ -1,0 +1,28 @@
+/*!
+ * ======================================================
+ * FeedBack Template For MUI (http://dev.dcloud.net.cn/mui)
+ * =======================================================
+ * @version:1.0.0
+ * @author:cuihongbao@dcloud.io
+ */
+.feedback textarea {
+	border: none !important;
+}
+
+.feedback textarea {
+	height: 400px;
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+.feedback .row {
+	width: 100%;
+	background-color: #fff;
+}
+
+.mui-btn-primary {
+	height: 40px;
+	padding: 5px;
+	background-color: #00BBFF;
+	border-color: #00BFFF;
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/common.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav line-color common-backgroundcolor">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<div class="mui-input-row" style="position: absolute;left: 40px;right: 50px;top:3px;">
+				<input id="searchInput" type="search" class="mui-input-clear" placeholder="搜索学校/专业" style="background-color: #EFF7FF;height: 31px;border: 1px solid #DFF1FC;text-align: left;padding-left: 5px;">
+			</div>
+			<a class="mui-icon mui-pull-right  mui-icon-search" id="searchBtn" style="font-size: 30px;"></a>
+		</header>
+		<div class="mui-content">
+			
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/app.js" ></script>
+		<script>
+			//mui初始化
+			mui.init({
+				subpages: [{
+					url: 'search_body.html',
+					id: 'search_body.html',
+					styles: {
+						top: '45px', //mui标题栏默认高度为45px；
+						bottom: '0px', //默认为0px，可不定义；
+					}
+				}]
+			});
+			App.getID("searchBtn").addEventListener('tap',function(){
+				var value =App.getID("searchInput").value;
+				App.evalJS("search_body.html","searchData('"+value+"')")
+			})
+			function loseFocus(){
+				document.activeElement.blur();
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,13 @@
+.mui-table-view-cell::after{
+	left: 0px !important;
+}
+.mui-input-group .mui-input-row::after{
+	left: 0px !important;
+}
+.mui-btn-primary {
+	background-color: #00BFFF;
+	border-color: #00BFFF;
+}
+.mui-input-group::before{
+	height: 0px !important;
+}

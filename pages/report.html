@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<style>
+			.mui-input-group::before {
+				height: 0px !important;
+			}
+			
+			.mui-input-group .mui-input-row::after {
+				height: 0px !important;
+			}
+			
+			.mui-input-group::after {
+				height: 0px !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav line-color common-backgroundcolor">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">举报</h1>
+			<a id="submit" class="mui-icon mui-pull-right" style="font-size: 18px;margin-top: 5px;">提交</a>
+		</header>
+		<div class="mui-content">
+
+			<form class="mui-input-group" style="margin-top: 10px;">
+				<div class="mui-input-row mui-radio mui-left" style="width: 48%;display: inline-block;">
+					<label>垃圾广告</label>
+					<input name="radio" type="radio" id="radio1">
+				</div>
+				<div class="mui-input-row mui-radio mui-left" style="width: 50%;display: inline-block;">
+					<label>淫秽色情</label>
+					<input name="radio" type="radio" id="radio2">
+				</div>
+				<div class="mui-input-row mui-radio mui-left" style="width: 48%;display: inline-block;">
+					<label>人身攻击</label>
+					<input name="radio1" type="radio" id="radio3">
+				</div>
+				<div class="mui-input-row mui-radio mui-left" style="width: 50%;display: inline-block;">
+					<label>泄露隐私</label>
+					<input name="radio" type="radio" id="radio4">
+				</div>
+				<div class="mui-input-row mui-radio mui-left" style="width: 48%;display: inline-block;">
+					<label>敏感信息</label>
+					<input name="radio" type="radio" id="radio5">
+				</div>
+				<div class="mui-input-row mui-radio mui-left" style="width: 50%;display: inline-block;">
+					<label>其他</label>
+					<input name="radio" type="radio" id="radio6">
+				</div>
+			</form>
+			<div class="mui-input-row" style="margin: 10px 5px;">
+				<textarea id="textarea" rows="8" placeholder="请填写举报内容"></textarea>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/app.js" ></script>
+		<script type="text/javascript" src="../js/report.js" ></script>
+	</body>
+
+</html>

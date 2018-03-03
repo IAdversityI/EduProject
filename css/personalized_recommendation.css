@@ -1,0 +1,62 @@
+.mui-grid-view.mui-grid-9 {
+	background-color: #FFFFFF !important;
+}
+
+.mui-table-view {
+	margin-top: 0px !important;
+}
+
+.shape-ci {
+	border-radius: 50% !important;
+}
+
+.mui-grid-view.mui-grid-9 .mui-table-view-cell {
+	border: none !important;
+	padding: 11px 0px;
+}
+
+.mui-table-view-cell::after {
+	left: 0px !important;
+}
+
+.mui-loader {
+	position: absolute;
+	top: 25%;
+	width: 100%;
+	height: 60%;
+	color: #000;
+	font-size: 14px;
+	text-align: center;
+	display: none;
+}
+
+.chart {
+	width: 100%;
+	height: 300px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.mui-table-view::after {
+	height: 0px !important;
+}
+
+.mui-table-view-cell.mui-active {
+	background-color: #FFFFFF !important;
+}
+
+.ui-alert {
+	text-align: center;
+	padding: 20px 10px;
+	font-size: 16px;
+}
+
+.jiazaiz {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	height: 60%;
+	color: #C0C0C0;
+	font-size: 14px;
+	text-align: center;
+}

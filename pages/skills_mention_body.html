@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/common.css" />
+	</head>
+
+	<body>
+		<!--下拉刷新容器-->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!--数据列表-->
+				<ul class="mui-table-view" id="bidu">
+					<div></div>
+					<script type="text/html" id="biduRe">
+						{{each list as value i}}
+						<li class="mui-table-view-cell detailsFlag" style="height: 120px;" data-newsId="{{list[i].newsId}}">
+							<a style="padding: 5px;">
+								<div style="width: 35%;display: inline-block;float: left;margin-right: 5px;"><img src="{{list[i].image}}" +size+ "" data-preview-src="" style="width: 100%;height: 110px;" /></div>
+								<h4 style="width: 60%;float: right;padding-top: 2px;" class="mui-ellipsis">{{list[i].title}}</h4>
+								<p style="width: 60%;float: right;" class="mui-ellipsis-2">
+									{{list[i].introduce}}
+								</p>
+								<p style="width: 60%;float: right;margin-top: 25px;">
+									<span style="width: 80px;position: absolute;bottom: 5px;float: left;">{{dateFormat(list[i].createTime,"yyyy-MM-dd")}}</span><span style="width: 80px;position: absolute;bottom: 5px;float: right;right: 5px;position: absolute;">阅读  {{list[i].viewedcount}}</span>
+								</p>
+							</a>
+						</li>
+						{{/each}}
+					</script>
+				</ul>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/template.js"></script>
+		<script type="text/javascript" src="../js/app.js"></script>
+		<script type="text/javascript" src="../js/skills_mention_body.js"></script>
+
+	</body>
+
+</html>

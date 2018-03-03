@@ -1,0 +1,1066 @@
+{
+	"main.html": {
+		"resources": [
+			"fonts/mui.ttf",
+			"js/main.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"pages/main_index.html",
+			"css/main.css",
+			"js/main_index.js",
+			"css/main_index.css",
+			"fonts/iconfont/iconfont.woff",
+			"fonts/iconfont/iconfont.css",
+			"js/app.js",
+			"pages/main_index_header.html",
+			"js/update.js"
+		],
+		"refer": [
+			"pages/main_index.html",
+			"pages/main_about.html",
+			"pages/main_analysis.html",
+			"pages/main_interactive.html",
+			"pages/main_information.html",
+			"pages/main_mine.html",
+			"pages/city_list.html",
+			"pages/main_index_header.html",
+			"pages/guide.html"
+		]
+	},
+	"pages/main_index.html": {
+		"resources": [
+			"img/shuijiao.jpg",
+			"js/main_index.js",
+			"css/main_index.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"pages/main_index_body.html",
+			"css/common.css",
+			"img/moren.png",
+			"js/template.js",
+			"js/app.js",
+			"fonts/iconfont/iconfont.woff",
+			"fonts/iconfont/iconfont.css",
+			"js/update.js"
+		],
+		"refer": [
+			"pages/results_analysis.html",
+			"pages/colleges_daquan.html",
+			"pages/province_batch_line.html",
+			"pages/college_admission_inquiry.html",
+			"pages/personal_timetable.html",
+			"pages/login.html",
+			"pages/results_analysis_header.html",
+			"pages/main_index_body.html",
+			"pages/search.html",
+			"pages/search_header.html",
+			"pages/main_information_details.html",
+			"pages/personalized_recommendation.html",
+			"pages/skills_mention_header.html",
+			"pages/industry.html",
+			"pages/professional_daquan_header.html"
+		]
+	},
+	"pages/main_information.html": {
+		"resources": [
+			"js/main_information.js",
+			"css/main_information.css",
+			"js/mui.zoom.js",
+			"js/mui.min.js",
+			"img/shuijiao.jpg",
+			"css/mui.min.css",
+			"js/mui.previewimage.js",
+			"js/mui.pullToRefresh.js",
+			"js/mui.pullToRefresh.material.js",
+			"img/yuantiao.jpg",
+			"img/cbd.jpg",
+			"img/logo.png",
+			"js/app.js",
+			"js/template.js",
+			"pages/afresh.html"
+		],
+		"refer": [
+			"pages/main_information_details.html",
+			"pages/afresh.html"
+		]
+	},
+	"pages/main_interactive.html": {
+		"resources": [
+			"js/main_interactive.js",
+			"js/mui.zoom.js",
+			"js/mui.previewimage.js",
+			"css/main_interactive.css",
+			"img/cbd.jpg",
+			"img/shuijiao.jpg",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/mui.pullToRefresh.js",
+			"js/mui.pullToRefresh.material.js",
+			"img/logo.png",
+			"pages/webview_float.html",
+			"img/sinaweibo.png",
+			"img/tenxun.png",
+			"img/friendquan.png",
+			"img/qq.png",
+			"img/weixin.png",
+			"js/template-native.js",
+			"js/url.js",
+			"js/template.js",
+			"js/app.js",
+			"fonts/iconfont/iconfont.css",
+			"fonts/iconfont/iconfont.woff",
+			"pages/afresh.html",
+			"css/main_information.css",
+			"js/mui.lazyload.js",
+			"js/mui.lazyload.img.js",
+			"js/jquery-1.11.2.min.js",
+			"js/jquery.lazyload.js",
+			"pages/main_interactive_question.html"
+		],
+		"refer": [
+			"pages/webview_float.html",
+			"pages/main_details.html",
+			"pages/main_details_header.html",
+			"pages/afresh.html",
+			"pages/main_interactive_question.html",
+			"pages/main_interactive_talk.html"
+		]
+	},
+	"pages/results_analysis.html": {
+		"resources": [
+			"js/echarts.min.js",
+			"css/result_analysis.css",
+			"js/result_analysis.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/results_analysis.js",
+			"css/results_analysis.css",
+			"fonts/iconfont/iconfont.css"
+		],
+		"refer": []
+	},
+	"pages/main_mine.html": {
+		"resources": [
+			"css/main_mine.css",
+			"js/main_mine.js",
+			"img/sinaweibo.png",
+			"img/tenxun.png",
+			"img/friendquan.png",
+			"img/qq.png",
+			"css/common.css",
+			"img/weixin.png",
+			"fonts/mui.ttf",
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/iconfont/iconfont.woff",
+			"css/mui.min.css",
+			"fonts/iconfont/iconfont.css"
+		],
+		"refer": [
+			"pages/login.html",
+			"pages/personal_center.html",
+			"pages/my_information.html",
+			"pages/feedback.html",
+			"pages/setting.html",
+			"pages/photo.html",
+			"pages/my_collection.html",
+			"pages/about_us.html",
+			"pages/my_information_header.html",
+			"pages/performance_management.html"
+		]
+	},
+	"pages/colleges_daquan.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/colleges_daquan.css",
+			"js/colleges_daquan.js",
+			"js/app.js",
+			"css/common.css",
+			"fonts/iconfont/iconfont.woff",
+			"fonts/iconfont/iconfont.css"
+		],
+		"refer": [
+			"pages/colleges_daquan_details_header.html",
+			"pages/colleges_211_985_header.html",
+			"pages/colleges_daquan_ye.html",
+			"pages/colleges_daquan_details_nopaihangheader.html"
+		]
+	},
+	"pages/city_list.html": {
+		"resources": [
+			"css/city_list.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/mui.indexedlist.css",
+			"js/city_list.js",
+			"js/mui.indexedlist.js"
+		],
+		"refer": []
+	},
+	"pages/province_batch_line.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/echarts.min.js",
+			"js/app.js",
+			"js/mui.picker.js",
+			"css/province_batch_line.css",
+			"css/common.css",
+			"js/mui.poppicker.js",
+			"js/province_batch_line.js",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css",
+			"pages/afresh.html"
+		],
+		"refer": [
+			"pages/afresh.html"
+		]
+	},
+	"pages/college_admission_inquiry.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/echarts.min.js",
+			"js/app.js",
+			"css/common.css",
+			"css/college_admission_inquiry.css",
+			"js/template.js",
+			"js/college_admission_inquiry.js"
+		],
+		"refer": []
+	},
+	"pages/personal_timetable.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": []
+	},
+	"pages/webview_float.html": {
+		"resources": [
+			"img/jia.png",
+			"js/post_content.js"
+		],
+		"refer": [
+			"pages/post_content.html",
+			"pages/login.html"
+		]
+	},
+	"pages/login.html": {
+		"resources": [
+			"img/sinaweibo.png",
+			"js/url.js",
+			"js/app.js",
+			"img/qq.png",
+			"css/login.css",
+			"js/login.js",
+			"img/weixin.png",
+			"js/mui.min.js",
+			"fonts/iconfont/iconfont.woff",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"fonts/iconfont/iconfont.css"
+		],
+		"refer": [
+			"pages/register.html",
+			"pages/forget_password.html"
+		]
+	},
+	"pages/results_analysis_body.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"js/echarts.min.js",
+			"js/results_analysis_body.js",
+			"js/mui.poppicker.js",
+			"css/results_analysis_body.css",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css",
+			"js/mui.pullToRefresh.js",
+			"js/app.js",
+			"js/mui.pullToRefresh.material.js",
+			"fonts/iconfont/iconfont.css",
+			"js/template.js",
+			"pages/afresh.html",
+			"fonts/iconfont/iconfont.woff",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"pages/afresh.html"
+		]
+	},
+	"pages/results_analysis_header.html": {
+		"resources": [
+			"pages/results_analysis_body.html",
+			"css/common.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/app.js"
+		],
+		"refer": [
+			"pages/results_analysis_body.html",
+			"pages/add_grade.html"
+		]
+	},
+	"pages/main_details.html": {
+		"resources": [
+			"js/main_details.js",
+			"js/mui.zoom.js",
+			"css/main_details.css",
+			"img/qq.png",
+			"js/mui.min.js",
+			"img/shuijiao.jpg",
+			"css/common.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/mui.previewimage.js",
+			"img/logo.png",
+			"img/tenxun.png",
+			"fonts/iconfont/iconfont.css",
+			"img/weixin.png",
+			"img/sinaweibo.png",
+			"img/friendquan.png",
+			"fonts/iconfont/iconfont.woff"
+		],
+		"refer": []
+	},
+	"pages/main_details_header.html": {
+		"resources": [
+			"pages/main_details.html",
+			"css/main_details_header.css",
+			"pages/main_details_body.html",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/common.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"pages/main_details.html",
+			"pages/main_details_body.html",
+			"pages/report.html"
+		]
+	},
+	"pages/register.html": {
+		"resources": [
+			"js/register.js",
+			"css/register.css"
+		],
+		"refer": []
+	},
+	"pages/forget_password.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/forget_password.css",
+			"fonts/iconfont/iconfont.woff",
+			"fonts/mui.ttf",
+			"js/forget_password.js",
+			"css/mui.min.css",
+			"fonts/iconfont/iconfont.css",
+			"js/app.js"
+		],
+		"refer": []
+	},
+	"pages/post_content.html": {
+		"resources": [
+			"css/post_content.css",
+			"js/post_content.js",
+			"js/url.js",
+			"js/mui.min.js",
+			"css/common.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/app.js",
+			"js/mui.picker.js",
+			"js/mui.poppicker.js",
+			"js/city.data.js",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css"
+		],
+		"refer": [
+			"pages/getaddress_header.html"
+		]
+	},
+	"pages/personal_center.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"css/personal_center.css",
+			"js/mui.picker.min.js",
+			"js/mui.poppicker.js",
+			"js/city.data.js",
+			"css/mui.picker.min.css",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css",
+			"js/city.data-3.js",
+			"js/personal_center.js",
+			"js/app.js",
+			"fonts/mui.ttf",
+			"css/common.css",
+			"js/mui.min.js",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"pages/getaddress_header.html"
+		]
+	},
+	"pages/main_index_body.html": {
+		"resources": [
+			"js/main_index_body.js",
+			"css/main_index_body.css"
+		],
+		"refer": [
+			"pages/colleges_daquan.html",
+			"pages/login.html",
+			"pages/results_analysis_header.html",
+			"pages/industry.html"
+		]
+	},
+	"pages/search.html": {
+		"resources": [
+			"css/search.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": []
+	},
+	"pages/main_index_header.html": {
+		"resources": [
+			"img/shuijiao.jpg",
+			"fonts/mui.ttf",
+			"css/main_index_header.css",
+			"js/main_index_header.js",
+			"pages/main_index_body.html",
+			"js/template.js",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"pages/main_index_body.html"
+		]
+	},
+	"pages/guide.html": {
+		"resources": [
+			"img/guide/APP-03.jpg",
+			"img/guide/APP-02.jpg",
+			"img/guide/APP-01.jpg",
+			"img/guide/APP-04.jpg",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"img/guide/APP-03.png",
+			"img/guide/APP-01.png",
+			"img/guide/APP-02.png",
+			"img/guide/App-04.jpg",
+			"img/guide/App-02.jpg",
+			"img/guide/App-03.jpg",
+			"img/guide/App-01.jpg",
+			"js/update.js",
+			"js/guide.js"
+		],
+		"refer": []
+	},
+	"pages/colleges_daquan_details_header.html": {
+		"resources": [
+			"pages/colleges_daquan_details_body.html",
+			"css/colleges_daquan_details_header.css",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/common.css",
+			"fonts/iconfont/iconfont.woff",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"fonts/iconfont/iconfont.css"
+		],
+		"refer": [
+			"pages/colleges_daquan_details_body.html",
+			"pages/search_header.html"
+		]
+	},
+	"pages/colleges_daquan_details_body.html": {
+		"resources": [
+			"js/colleges_daquan_details_body.js",
+			"css/colleges_daquan_details_body.css",
+			"js/template.js",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/common.css",
+			"css/mui.min.css",
+			"fonts/iconfont/iconfont.css",
+			"pages/afresh.html"
+		],
+		"refer": [
+			"pages/colleges_details_header.html",
+			"pages/afresh.html"
+		]
+	},
+	"pages/colleges_details_body.html": {
+		"resources": [
+			"js/radialIndicator.min.js",
+			"js/echarts.min.js",
+			"js/mui.picker.js",
+			"js/mui.zoom.js",
+			"js/jquery-1.11.2.min.js",
+			"js/mui.poppicker.js",
+			"js/colleges_details_body.js",
+			"js/mui.previewimage.js",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css",
+			"css/colleges_details_body.css"
+		],
+		"refer": []
+	},
+	"pages/colleges_details_header.html": {
+		"resources": [
+			"pages/colleges_details_body.html",
+			"fonts/iconfont/iconfont.woff",
+			"fonts/iconfont/iconfont.css",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/common.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/template.js"
+		],
+		"refer": [
+			"pages/colleges_details_body.html"
+		]
+	},
+	"pages/industry.html": {
+		"resources": [
+			"js/industry.js",
+			"css/industry.css",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/common.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/template.js"
+		],
+		"refer": [
+			"pages/industry_list_header.html"
+		]
+	},
+	"pages/search_header.html": {
+		"resources": [
+			"pages/search_body.html",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/common.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"pages/search_body.html"
+		]
+	},
+	"pages/search_body.html": {
+		"resources": [
+			"css/search.css",
+			"js/search.js",
+			"js/mui.pullToRefresh.js",
+			"js/mui.pullToRefresh.material.js",
+			"js/template.js"
+		],
+		"refer": [
+			"pages/colleges_details_header.html"
+		]
+	},
+	"pages/add_grade.html": {
+		"resources": [
+			"js/add_grade.js",
+			"css/common.css",
+			"css/mui.min.css",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css"
+		],
+		"refer": []
+	},
+	"pages/main_information_details.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/common.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"img/logo.png",
+			"js/template.js",
+			"pages/afresh.html"
+		],
+		"refer": [
+			"pages/afresh.html"
+		]
+	},
+	"pages/personalized_recommendation.html": {
+		"resources": [
+			"css/personalized_recommendation.css",
+			"js/mui.picker.js",
+			"js/app.js",
+			"fonts/mui.ttf",
+			"js/personalized_recommendation.js",
+			"fonts/iconfont/iconfont.css",
+			"css/mui.picker.css",
+			"js/echarts.min.js",
+			"css/common.css",
+			"js/mui.min.js",
+			"js/mui.poppicker.js",
+			"fonts/iconfont/iconfont.woff",
+			"css/mui.min.css",
+			"css/mui.poppicker.css",
+			"js/template.js"
+		],
+		"refer": [
+			"pages/personalized_recommendation_schoollist.html"
+		]
+	},
+	"pages/skills_mention_header.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/common.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"pages/skills_mention_body.html"
+		],
+		"refer": [
+			"pages/skills_mention_body.html"
+		]
+	},
+	"pages/skills_mention_body.html": {
+		"resources": [
+			"js/skills_mention_body.js",
+			"js/app.js",
+			"js/template.js",
+			"pages/afresh.html"
+		],
+		"refer": [
+			"pages/main_information_details.html",
+			"pages/afresh.html"
+		]
+	},
+	"pages/industry_details.html": {
+		"resources": [
+			"js/industry_details.js"
+		],
+		"refer": []
+	},
+	"pages/industry_list_body.html": {
+		"resources": [
+			"js/industry_list_body.js",
+			"js/app.js",
+			"js/template.js"
+		],
+		"refer": [
+			"pages/industry_details.html"
+		]
+	},
+	"pages/industry_list_header.html": {
+		"resources": [
+			"pages/industry_list_body.html",
+			"js/mui.min.js",
+			"css/common.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"pages/industry_list_body.html"
+		]
+	},
+	"pages/main_details_body.html": {
+		"resources": [
+			"js/mui.pullToRefresh.js",
+			"img/friendquan.png",
+			"js/mui.zoom.js",
+			"img/qq.png",
+			"js/mui.pullToRefresh.material.js",
+			"fonts/iconfont/iconfont.woff",
+			"js/main_details_body.js",
+			"js/mui.previewimage.js",
+			"js/template.js",
+			"img/weixin.png",
+			"fonts/iconfont/iconfont.css",
+			"css/main_details_body.css",
+			"js/app.js",
+			"fonts/mui.ttf",
+			"css/common.css",
+			"js/mui.min.js",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"pages/login.html"
+		]
+	},
+	"pages/my_information.html": {
+		"resources": [
+			"js/mui.pullToRefresh.js",
+			"js/app.js",
+			"js/my_information.js",
+			"img/qq.png",
+			"js/mui.pullToRefresh.material.js",
+			"fonts/mui.ttf",
+			"fonts/iconfont/iconfont.css",
+			"img/weixin.png",
+			"img/friendquan.png",
+			"js/mui.zoom.js",
+			"css/common.css",
+			"js/mui.min.js",
+			"fonts/iconfont/iconfont.woff",
+			"css/my_information.css",
+			"css/mui.min.css",
+			"js/mui.previewimage.js",
+			"js/template.js",
+			"pages/main_interactive_question.html",
+			"pages/my_information_question.html"
+		],
+		"refer": [
+			"pages/main_interactive_talk.html",
+			"pages/main_interactive_question.html",
+			"pages/my_information_question.html",
+			"pages/my_information_talk.html"
+		]
+	},
+	"pages/feedback.html": {
+		"resources": [
+			"js/app.js",
+			"css/feedback.css",
+			"js/mui.min.js",
+			"css/common.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/feedback.js"
+		],
+		"refer": []
+	},
+	"pages/setting.html": {
+		"resources": [
+			"js/app.js",
+			"js/setting.js",
+			"js/mui.min.js",
+			"css/common.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/setting.css"
+		],
+		"refer": [
+			"pages/login.html"
+		]
+	},
+	"pages/getaddress_header.html": {
+		"resources": [
+			"pages/getaddress_body.html"
+		],
+		"refer": [
+			"pages/getaddress_body.html"
+		]
+	},
+	"pages/getaddress_body.html": {
+		"resources": [
+			"js/template.js"
+		],
+		"refer": []
+	},
+	"pages/photo.html": {
+		"resources": [
+			"js/exif.js",
+			"js/jquery-1.11.2.min.js",
+			"css/cropper.css",
+			"js/cropper-img.js",
+			"js/cropper.min.js",
+			"css/photo.css",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/mui.min.css"
+		],
+		"refer": []
+	},
+	"pages/colleges_211_985_body.html": {
+		"resources": [
+			"css/video-js.min.css",
+			"css/colleges_211_985_body.css",
+			"js/colleges_211_985_body.js",
+			"js/template.js",
+			"js/video.min.js",
+			"fonts/iconfont/iconfont.woff",
+			"fonts/iconfont/iconfont.css"
+		],
+		"refer": [
+			"pages/colleges_details_header.html"
+		]
+	},
+	"pages/colleges_211_985_header.html": {
+		"resources": [
+			"pages/colleges_211_985_body.html",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/common.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"pages/colleges_211_985_body.html"
+		]
+	},
+	"pages/colleges_daquan_ye.html": {
+		"resources": [
+			"js/app.js",
+			"css/video-js.min.css",
+			"js/mui.min.js",
+			"css/common.css",
+			"fonts/iconfont/iconfont.woff",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/colleges_daquan_ye.js",
+			"css/colleges_daquan_ye.css",
+			"js/video.min.js",
+			"js/template.js",
+			"fonts/iconfont/iconfont.css"
+		],
+		"refer": []
+	},
+	"pages/my_collection.html": {
+		"resources": [
+			"js/mui.pullToRefresh.js",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/common.css",
+			"js/mui.pullToRefresh.material.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/template.js",
+			"css/my_collection.css",
+			"js/my_collection.js"
+		],
+		"refer": [
+			"pages/colleges_details_header.html"
+		]
+	},
+	"pages/personalized_recommendation_schoollist.html": {
+		"resources": [
+			"js/personalized_recommendation_schoollist.js"
+		],
+		"refer": []
+	},
+	"pages/about_us.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/common.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"img/logo.png"
+		],
+		"refer": []
+	},
+	"pages/professional_daquan_header.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/common.css",
+			"fonts/iconfont/iconfont.woff",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"pages/professional_daquan.html",
+			"fonts/iconfont/iconfont.css"
+		],
+		"refer": [
+			"pages/professional_daquan.html"
+		]
+	},
+	"pages/professional_daquan.html": {
+		"resources": [
+			"js/professional_daquan.js",
+			"js/template.js",
+			"css/professional_daquan.css",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/common.css",
+			"css/mui.min.css",
+			"fonts/iconfont/iconfont.css"
+		],
+		"refer": [
+			"pages/professional_daquan_details.html"
+		]
+	},
+	"pages/professional_daquan_details.html": {
+		"resources": [
+			"js/professional_daquan_details.js",
+			"fonts/iconfont/iconfont.woff",
+			"fonts/mui.ttf",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/common.css",
+			"css/mui.min.css",
+			"js/template.js",
+			"fonts/iconfont/iconfont.css"
+		],
+		"refer": []
+	},
+	"pages/colleges_daquan_details_nopaihangheader.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/common.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"pages/colleges_daquan_details_body.html",
+			"fonts/iconfont/iconfont.css",
+			"css/colleges_daquan_details_header.css"
+		],
+		"refer": [
+			"pages/colleges_daquan_details_body.html"
+		]
+	},
+	"pages/main_interactive_question.html": {
+		"resources": [
+			"fonts/iconfont/iconfont.woff",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/main_interactive.css",
+			"js/template.js",
+			"fonts/iconfont/iconfont.css",
+			"js/mui.zoom.js",
+			"js/mui.previewimage.js",
+			"js/mui.pullToRefresh.js",
+			"js/mui.pullToRefresh.material.js",
+			"fonts/mui.ttf",
+			"css/common.css",
+			"img/friendquan.png",
+			"img/qq.png",
+			"img/weixin.png",
+			"pages/webview_float.html",
+			"pages/afresh.html"
+		],
+		"refer": [
+			"pages/main_details_header.html",
+			"pages/webview_float.html",
+			"pages/login.html",
+			"pages/post_content.html",
+			"pages/afresh.html"
+		]
+	},
+	"pages/main_interactive_talk.html": {
+		"resources": [
+			"fonts/iconfont/iconfont.woff",
+			"js/app.js",
+			"img/friendquan.png",
+			"js/mui.zoom.js",
+			"img/qq.png",
+			"js/mui.min.js",
+			"css/common.css",
+			"css/mui.min.css",
+			"js/mui.previewimage.js",
+			"css/main_interactive.css",
+			"js/template.js",
+			"img/weixin.png",
+			"fonts/iconfont/iconfont.css",
+			"fonts/mui.ttf",
+			"pages/webview_float.html",
+			"pages/afresh.html"
+		],
+		"refer": [
+			"pages/main_details_header.html",
+			"pages/webview_float.html",
+			"pages/post_content.html",
+			"pages/afresh.html",
+			"pages/login.html"
+		]
+	},
+	"pages/my_information_talk.html": {
+		"refer": [
+			"pages/login.html",
+			"pages/main_details_header.html",
+			"pages/afresh.html"
+		],
+		"resources": [
+			"js/app.js",
+			"img/friendquan.png",
+			"js/mui.zoom.js",
+			"img/qq.png",
+			"js/mui.min.js",
+			"css/common.css",
+			"css/mui.min.css",
+			"js/mui.previewimage.js",
+			"css/main_interactive.css",
+			"js/template.js",
+			"img/weixin.png",
+			"fonts/iconfont/iconfont.css",
+			"fonts/iconfont/iconfont.woff",
+			"css/my_information.css",
+			"pages/afresh.html"
+		]
+	},
+	"pages/my_information_question.html": {
+		"resources": [
+			"js/app.js",
+			"img/friendquan.png",
+			"js/mui.zoom.js",
+			"img/qq.png",
+			"js/mui.min.js",
+			"css/common.css",
+			"css/mui.min.css",
+			"js/mui.previewimage.js",
+			"css/main_interactive.css",
+			"js/template.js",
+			"img/weixin.png",
+			"fonts/iconfont/iconfont.css",
+			"fonts/iconfont/iconfont.woff",
+			"css/my_information.css",
+			"pages/afresh.html"
+		],
+		"refer": [
+			"pages/main_details_header.html",
+			"pages/afresh.html"
+		]
+	},
+	"pages/my_information_header.html": {
+		"resources": [
+			"pages/my_information.html",
+			"js/mui.min.js",
+			"css/common.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"pages/my_information.html"
+		]
+	},
+	"pages/performance_management.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/common.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/performance_management.js",
+			"js/template.js",
+			"fonts/iconfont/iconfont.css",
+			"fonts/iconfont/iconfont.woff"
+		],
+		"refer": []
+	},
+	"pages/afresh.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/common.css",
+			"fonts/iconfont/iconfont.woff",
+			"css/mui.min.css",
+			"fonts/iconfont/iconfont.css"
+		],
+		"refer": []
+	},
+	"pages/report.html": {
+		"resources": [
+			"js/report.js"
+		]
+	}
+}

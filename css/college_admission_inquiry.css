@@ -1,0 +1,21 @@
+.mui-btn-primary {
+	background-color: #00BBFF;
+	border-color: #00BFFF;
+}
+
+.chart {
+	width: 100%;
+	height: 300px;
+	margin: 0px;
+	padding: 0px;
+}
+.mui-table-view-cell::after{
+	left:0px !important;
+}
+#highData.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+	/*border-right: 0px !important;*/
+	height: 100px;
+}
+.mui-active{
+	background-color: #FFFFFF !important;
+}

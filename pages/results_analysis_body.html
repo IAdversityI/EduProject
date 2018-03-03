@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/mui.poppicker.css" />
+		<link rel="stylesheet" href="../css/mui.picker.css" />
+		<link rel="stylesheet" href="../fonts/iconfont/iconfont.css" />
+		<link rel="stylesheet" href="../css/results_analysis_body.css" />
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div id="resultsAnalysis" class="mui-loader"><span class="mui-icon iconfont icon-chengjifenxi mui-btn mui-fab" style="font-size: 50px;background-color: #CCCCCC;width: 100px;height: 100px;color: #FFFFFF;"></span></span>
+				<div>现在没有成绩分析了，赶快去添加成绩吧！</div>
+			</div>
+		
+			<div id="no-network" class="mui-loader"><span class="mui-icon iconfont icon-wuwangluo01" style="font-size: 80px;width: 100px;height: 100px;color: #C8C7CC;"></span></span>
+				<div style="color: #C8C7CC;">未能成功连接网络，请检查网络</div>
+				<button type="button" class="mui-btn mui-btn-primary mui-btn-block mui-btn-outlined" style="width: 150px;display: inline-block;margin-top: 30px;color: #00BFFF;border-color:#00BFFF;">重新加载</button>
+			</div>
+			<div id="pullrefresh" class="mui-scroll-wrapper">
+				<div class="mui-scroll" id="allID" style="display: none;">
+					<ul class="mui-table-view mui-grid-view mui-grid-9" style="background-color: #FFFFFF;border: none;" id="paihang">
+						<script type="text/html" id="paihangRe">
+							<li class="mui-table-view-cell mui-media mui-col-xs-6">
+								<a>
+									<span class="mui-icon" style="font-size: 30px;color: #00BBFF;">{{list.value.possibility}}</span></span>
+									<div style="white-space: normal;width: 100%;font-size: 15px;">您打败了{{list.value.possibility}}的{{list.name}}考生</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-6">
+								<a>
+									<span class="mui-icon" style="font-size: 30px;color: #FF4A00;">{{list.value.ranking}}</span>
+									<div style="white-space: normal;width: 100%;font-size: 15px;">预计排名</div>
+								</a>
+							</li>
+						</script>
+					</ul>
+					<ul class="mui-table-view" style="border-bottom: 8px solid #F2F2F2 !important;">
+						<li class="mui-table-view-cell">
+							<h4 style="font-weight: normal;">近5次成绩走势</h4>
+						</li>
+						<li class="mui-table-view-cell">
+							<div class="chart" id="item-lineChart1"></div>
+						</li>
+					</ul>
+					<ul class="mui-table-view" style="border-bottom: 8px solid #F2F2F2 !important;">
+						<li class="mui-table-view-cell">
+							<h4 style="font-weight: normal;">上一次成绩对比</h4>
+						</li>
+						<li class="mui-table-view-cell">
+							<div class="chart" id="item-lineChart2"></div>
+						</li>
+					</ul>
+
+					<ul class="mui-table-view" style="border-bottom: 8px solid #F2F2F2 !important;">
+						<li class="mui-table-view-cell">
+							<h4 style="font-weight: normal;">各科成绩与各科总分比例</h4>
+						</li>
+						<li class="mui-table-view-cell">
+							<div class="chart" id="item-radar"></div>
+						</li>
+					</ul>
+
+					<ul class="mui-table-view" style="border-bottom: 8px solid #F2F2F2 !important;">
+						<li class="mui-table-view-cell">
+							<h4 style="font-weight: normal;">历次成绩各科平均分</h4>
+						</li>
+						<li class="mui-table-view-cell">
+							<div class="chart" id="item-descartes"></div>
+						</li>
+					</ul>
+					<ul class="mui-table-view" style="border-bottom: 8px solid #F2F2F2 !important;">
+						<li class="mui-table-view-cell">
+							<h4 style="font-weight: normal;">历次成绩总分走势</h4>
+						</li>
+						<li class="mui-table-view-cell">
+							<div class="chart" id="item-lineChart4"></div>
+						</li>
+					</ul>
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<h4 style="font-weight: normal;">综合成绩与省控线对比</h4>
+						</li>
+						<li class="mui-table-view-cell">
+							<div class="chart" id="item-lineChart5"></div>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/echarts.min.js"></script>
+		<script type="text/javascript" src="../js/template.js" ></script>
+		<script src="../js/mui.pullToRefresh.js"></script>
+		<script src="../js/mui.pullToRefresh.material.js"></script>
+		<script type="text/javascript" src="../js/mui.picker.js"></script>
+		<script type="text/javascript" src="../js/mui.poppicker.js"></script>
+		<script type="text/javascript" src="../js/app.js"></script>
+		<script type="text/javascript" src="../js/results_analysis_body.js"></script>
+	</body>
+
+</html>

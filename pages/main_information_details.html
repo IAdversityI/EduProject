@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<style>
+			#myContenet img {
+				width: 100%;
+			}
+			
+			.mui-table-view-cell::after {
+				left: 0px !important;
+			}
+			
+			.mui-active {
+				background-color: #FFFFFF !important;
+			}
+			
+			p {
+				color: #000000 !important;
+				text-align: left !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav line-color common-backgroundcolor">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">详情</h1>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view" style="margin-top: 0px;">
+				<script id="detailData" type="text/html">
+					<li class="mui-table-view-cell">
+						<h4 style="text-align: left;">{{list.title}}</h4>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="#" style="padding-left:20px ;">
+							<img class="mui-pull-left head-img" id="head-img" src="../img/logo.png" style="width: 10%;border-radius: 50%;margin-left: -7px;">
+							<p class='mui-ellipsis' style="color: #000000;  margin-top: 5px;"><span class="mui-pull-left" style="margin-left: 10px;font-size: 16px;color: #6d6d72;">成绩分析大师</span><span class="mui-pull-right" style="color: #8f8f94;">{{dateFormat(list.createTime,"yyyy-MM-dd")}}</span></p>
+						</a>
+						<div style="margin-top: 10px;">
+							<p style="width: 100%;height: 200px;">
+								<img src="{{list.image}}" data-preview-src="" style="width: 100%;" />
+							</p>
+						</div>
+					</li>
+				</script>
+				<div id="details"></div>
+				<li class="mui-table-view-cell">
+					<p id="myContenet"></p>
+					</br>
+					<div style="font-size: 12px;color: #6D6D72;">文章来源：<span id="orgin"></span></div>
+				</li>
+			</ul>
+
+		</div>
+		<script src="../js/mui.min.js "></script>
+		<script type="text/javascript" src="../js/template.js"></script>
+		<script type="text/javascript " src="../js/app.js "></script>
+		<script type="text/javascript ">
+			var newsID = null;
+			mui.plusReady(function() {
+				newsID = plus.webview.currentWebview().newsId;
+				if(App.noNetwork()) {
+					App.afreshWebview("45", "0", "afresh14.html");
+					plus.nativeUI.closeWaiting();
+				} else {
+					var url = App.url + '/news/getNewsInfo';
+					var dataOptions = {
+						newsID: newsID
+					};
+					var success = function(data) {
+						if(data.status) {
+							var option = {
+								list: data.result,
+								size: "@20p"
+							};
+
+							var templatehtml = template("detailData", option);
+							App.getID("details").innerHTML = templatehtml;
+							App.getID("myContenet").innerHTML = data.result.content;
+							App.getID("orgin").innerHTML = data.result.origin;
+						} else {
+							mui.toast(data.result);
+							if(data.signal == 1) {
+								App.removeItem("tokenflag");
+								var url = "../pages/login.html";
+								var id = "../pages/login.html";
+								var extras = {};
+								App.openWindow(url, id, extras);
+							}
+						}
+					};
+					var dataType = "json";
+					App.ajax(url, dataOptions, success, dataType);
+				}
+			})
+			template.helper("dateFormat", function(a, c) {
+				a = new Date(a);
+				var b = {
+					M: a.getMonth() + 1,
+					d: a.getDate(),
+					h: a.getHours(),
+					m: a.getMinutes(),
+					s: a.getSeconds(),
+					q: Math.floor((a.getMonth() + 3) / 3),
+					S: a.getMilliseconds()
+				};
+				c = c.replace(/([yMdhmsqS])+/g, function(f, e) {
+					var d = b[e];
+					if(d !== undefined) {
+						if(f.length > 1) {
+							d = "0" + d;
+							d = d.substr(d.length - 2)
+						}
+						return d
+					} else {
+						if(e === "y") {
+							return(a.getFullYear() + "").substr(4 - f.length)
+						}
+					}
+					return f
+				});
+				return c
+			});
+			/*重新加载数据按钮*/
+			function refreshData() {
+				plus.nativeUI.showWaiting("  请稍候...  ");
+				if(App.noNetwork()) {
+					plus.nativeUI.closeWaiting();
+				} else {
+					var url = App.url + '/news/getNewsInfo';
+					var dataOptions = {
+						newsID: newsID
+					};
+					var success = function(data) {
+						var afresh = App.getWebviewID("afresh14.html");
+						if(afresh) {
+							afresh.close();
+						}
+						if(data.status) {
+							var option = {
+								list: data.result,
+								size: "@20p"
+							};
+
+							var templatehtml = template("detailData", option);
+							App.getID("details").innerHTML = templatehtml;
+							App.getID("myContenet").innerHTML = data.result.content;
+							App.getID("orgin").innerHTML = data.result.origin;
+						} else {
+							mui.toast(data.result);
+							if(data.signal == 1) {
+								App.removeItem("tokenflag");
+								var url = "../pages/login.html";
+								var id = "../pages/login.html";
+								var extras = {};
+								App.openWindow(url, id, extras);
+							}
+						}
+					};
+					var dataType = "json";
+					App.ajax(url, dataOptions, success, dataType);
+				}
+			}
+		</script>
+	</body>
+
+</html>

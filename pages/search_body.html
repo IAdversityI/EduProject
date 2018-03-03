@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/search.css" />
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider mui-fullscreen">
+				<div id="sliderSegmentedControl" class="mui-segmented-control mui-segmented-control-inverted" style="height: 40px;padding-top: 5px;">
+					<a class="mui-control-item mui-active" href="#item1" data-search="school">
+						学校
+					</a>
+					<a class="mui-control-item" href="#item2" data-search="profession">
+						专业
+					</a>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6"></div>
+				<div class="mui-slider-group">
+					<div id="item1" class="mui-slider-item mui-control-content mui-active mui-fullscreen">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view" id="school">
+									<script id="schoolSearch" type="text/html">
+										{{if myHistory}} 
+										<li class="mui-table-view-cell mui-media">您可能感兴趣</li>
+										{{each schoolList as value i}}
+										<li class="mui-table-view-cell mui-media collegesDetailsFlag" style="border-bottom: 8px solid #F2F2F2 !important;" data-collegeID="{{schoolList[i].collegeID}}" data-collegeLogo="{{schoolList[i].collegeLogo}}" data-collegeName="{{schoolList[i].collegeName}}" data-collegeTag="{{schoolList[i].collegeTag}}" data-collegeIDNumber="{{schoolList[i].collegeIDNumber}}">
+											<a href="#">
+												<span style="width: 20%;position: absolute;top:50%;"><img class="mui-pull-left" src="{{schoolList[i].collegeLogo}}"+size+"" style="width: 100%;border-radius: 50%;position: absolute;top:50%;margin-top: -35px;"></span>
+												<div class="mui-media-body">
+													<div style="width: 75%;" class="mui-pull-right">
+														<h3 style="font-weight: normal;display: inline-block;white-space: normal;width: 70%;">{{schoolList[i].collegeName}}</h3><span style="margin: 0px 0px 10px 10px;color: #8f8f94;">{{schoolList[i].collegeProvince}}</span>
+														<p class="mui-ellipsis"><span style="float: left;width: 50%;white-space: normal;">大学学历:<span style="color: #00BBFF;">{{schoolList[i].collegeDegree}}</span></span><span style="float: right;width: 50%;white-space: normal;">人气:<span style="color: #00BBFF;">{{schoolList[i].peopleHeat}}</span></span>
+														</p>
+														<p class="mui-ellipsis" style="white-space: normal;">
+															{{if JSON(schoolList[i].collegeTag).length!=0}} {{each JSON(schoolList[i].collegeTag) as value k}} {{if k
+															<6}} <button type="button" class="mui-btn" style="width:'+(20+clearSpace(JSON(schoolList[i].collegeTag)[k]))+'%;margin-bottom: 5px;background-color: #00BBFF;border-color: rgba(255,255,255,0.5);color: #FFFFFF;font-size: 68%;padding-left: 5px;padding-right: 5px;">{{JSON(schoolList[i].collegeTag)[k]}}</button>
+																{{/if}} {{/each}} {{else}}
+																<button type="button" class="mui-btn mui-ellipsis" style="width:32%;margin-bottom: 5px;background-color: #00BBFF;border-color: rgba(255,255,255,0.5);color: #FFFFFF;padding-right: 5px;padding-left: 5px;visibility: hidden;">占位</button> {{/if}}
+
+														</p>
+													</div>
+												</div>
+											</a>
+										</li>
+										{{/each}}
+										{{else}}
+										{{each schoolList as value i}}
+										<li class="mui-table-view-cell mui-media collegesDetailsFlag" style="border-bottom: 8px solid #F2F2F2 !important;" data-collegeID="{{schoolList[i].collegeID}}" data-collegeLogo="{{schoolList[i].collegeLogo}}" data-collegeName="{{schoolList[i].collegeName}}" data-collegeTag="{{schoolList[i].collegeTag}}" data-collegeIDNumber="{{schoolList[i].collegeIDNumber}}">
+											<a href="#">
+												<span style="width: 20%;position: absolute;top:50%;"><img class="mui-pull-left" src="{{schoolList[i].collegeLogo}}"+size+"" style="width: 100%;border-radius: 50%;position: absolute;top:50%;margin-top: -35px;"></span>
+												<div class="mui-media-body">
+													<div style="width: 75%;" class="mui-pull-right">
+														<h3 style="font-weight: normal;display: inline-block;white-space: normal;width: 70%;">{{schoolList[i].collegeName}}</h3><span style="margin: 0px 0px 10px 10px;color: #8f8f94;">{{schoolList[i].collegeProvince}}</span>
+														<p class="mui-ellipsis"><span style="float: left;width: 50%;white-space: normal;">大学学历:<span style="color: #00BBFF;">{{schoolList[i].collegeDegree}}</span></span><span style="float: right;width: 50%;white-space: normal;">人气:<span style="color: #00BBFF;">{{schoolList[i].peopleHeat}}</span></span>
+														</p>
+														<p class="mui-ellipsis" style="white-space: normal;">
+															{{if JSON(schoolList[i].collegeTag).length!=0}} {{each JSON(schoolList[i].collegeTag) as value k}} {{if k
+															<6}} <button type="button" class="mui-btn" style="width:'+(20+clearSpace(JSON(schoolList[i].collegeTag)[k]))+'%;margin-bottom: 5px;background-color: #00BBFF;border-color: rgba(255,255,255,0.5);color: #FFFFFF;font-size: 68%;padding-left: 5px;padding-right: 5px;">{{JSON(schoolList[i].collegeTag)[k]}}</button>
+																{{/if}} {{/each}} {{else}}
+																<button type="button" class="mui-btn mui-ellipsis" style="width:32%;margin-bottom: 5px;background-color: #00BBFF;border-color: rgba(255,255,255,0.5);color: #FFFFFF;padding-right: 5px;padding-left: 5px;visibility: hidden;">占位</button> {{/if}}
+
+														</p>
+													</div>
+												</div>
+											</a>
+										</li>
+										{{/each}}
+										{{/if}}
+									</script>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item2" class="mui-slider-item mui-control-content mui-fullscreen">
+						<div id="scroll2" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view" id="proDaQuanCo">
+									<script id="proDaQuan" type="text/html">
+										{{if myHistory}} 
+										<li class="mui-table-view-cell mui-media">您可能感兴趣</li>
+										{{each proList as value i}}
+										<li class="mui-table-view-cell mui-media proDaQuanFlag" style="border-bottom: 8px solid #F2F2F2 !important;" data-zyid="{{proList[i].zyid}}" data-specialName="{{proList[i].specialname}}">
+											<a href="#">
+												<div class="mui-media-body">
+													<div style="width: 100%;" class="mui-pull-right">
+														<h3 style="font-weight: normal;display: inline-block;white-space: normal;width: 70%;">{{proList[i].specialname}}</h3>
+														<p class="mui-ellipsis"><span style="float: left;width: 50%;white-space: normal;">大学学历:  <span style="color: #00BBFF;font-size: 16px;">{{proList[i].zycengci}}</span></span><span style="float: right;width: 50%;white-space: normal;">人气:  <span style="color: #00BBFF;font-size: 16px;">{{proList[i].peopleHeat}}</span></span>
+														</p>
+														<p class="mui-ellipsis"><span style="float: left;width: 50%;white-space: normal;">专业排名:  <span style="color: #00BBFF;font-size: 16px;">{{proList[i].ranking}}</span></span><span style="float: right;width: 50%;white-space: normal;">专业代码:  <span style="color: #00BBFF;font-size: 16px;">{{proList[i].code}}</span></span>
+														</p>
+
+													</div>
+												</div>
+											</a>
+										</li>
+										{{/each}} 
+										{{else}}
+										{{each proList as value i}}
+										<li class="mui-table-view-cell mui-media proDaQuanFlag" style="border-bottom: 8px solid #F2F2F2 !important;" data-zyid="{{proList[i].zyid}}" data-specialName="{{proList[i].specialname}}">
+											<a href="#">
+												<div class="mui-media-body">
+													<div style="width: 100%;" class="mui-pull-right">
+														<h3 style="font-weight: normal;display: inline-block;white-space: normal;width: 70%;">{{proList[i].specialname}}</h3>
+														<p class="mui-ellipsis"><span style="float: left;width: 50%;white-space: normal;">大学学历:  <span style="color: #00BBFF;font-size: 16px;">{{proList[i].zycengci}}</span></span><span style="float: right;width: 50%;white-space: normal;">人气:  <span style="color: #00BBFF;font-size: 16px;">{{proList[i].peopleHeat}}</span></span>
+														</p>
+														<p class="mui-ellipsis"><span style="float: left;width: 50%;white-space: normal;">专业排名:  <span style="color: #00BBFF;font-size: 16px;">{{proList[i].ranking}}</span></span><span style="float: right;width: 50%;white-space: normal;">专业代码:  <span style="color: #00BBFF;font-size: 16px;">{{proList[i].code}}</span></span>
+														</p>
+
+													</div>
+												</div>
+											</a>
+										</li>
+										{{/each}} 
+										{{/if}}
+									</script>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/template.js"></script>
+		<script src="../js/mui.pullToRefresh.js"></script>
+		<script src="../js/mui.pullToRefresh.material.js"></script>
+		<script type="text/javascript" src="../js/app.js"></script>
+		<script type="text/javascript" src="../js/search.js"></script>
+	</body>
+
+</html>

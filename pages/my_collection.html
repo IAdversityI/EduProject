@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/my_collection.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav line-color common-backgroundcolor">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">我的收藏</h1>
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider mui-fullscreen">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted" style="padding-top: 2px;">
+					<a class="mui-control-item mui-active" href="#item1" data-shocang="school">
+						学校
+					</a>
+					<a class="mui-control-item" href="#item2" data-shocang="zhuanye">
+						专业
+					</a>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6"></div>
+				<div class="mui-slider-group">
+					<div id="item1" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view" id="school">
+									<script id="schoolRender" type="text/html">
+										{{if list}} {{each list as value i}}
+										<li class="mui-table-view-cell mui-media collegesDetailsFlag" style="border-bottom: 8px solid #F2F2F2 !important;" data-collegeID="{{list[i].collegeID}}" data-collegeLogo="{{list[i].collegeLogo}}" data-collegeName="{{list[i].collegeName}}" data-collegeTag="{{list[i].collegeTag}}" data-collegeIDNumber="{{list[i].collegeIDNumber}}">
+											<a href="#">
+												<span style="width: 20%;position: absolute;top:50%;"><img class="mui-pull-left" src="{{list[i].collegeLogo}}"+size+"" style="width:100%;border-radius: 50%;position: absolute;top:50%;margin-top: -35px;"></span>
+												<div class="mui-media-body">
+													<div style="width: 75%;" class="mui-pull-right">
+														<h3 style="font-weight: normal;display: inline-block;white-space: normal;width: 70%;">{{list[i].collegeName}}</h3><span style="margin: 0px 0px 10px 10px;color: #8f8f94;">{{list[i].collegeProvince}}</span>
+														<p class="mui-ellipsis"><span style="float: left;width: 50%;white-space: normal;">大学学历:<span style="color: #00BBFF;">{{list[i].collegeDegree}}</span></span><span style="float: right;width: 50%;white-space: normal;">人气:<span style="color: #00BBFF;">{{list[i].peopleHeat}}</span></span>
+														</p>
+														<p class="mui-ellipsis" style="white-space: normal;">
+															{{if JSON(list[i].collegeTag).length!=0}} {{each JSON(list[i].collegeTag) as value k}} {{if k
+															<6}} <button type="button" class="mui-btn" style="width:'+(20+clearSpace(JSON(list[i].collegeTag)[k]))+'%;margin-bottom: 5px;background-color: #00BBFF;border-color: rgba(255,255,255,0.5);color: #FFFFFF;font-size: 68%;padding-left: 5px;padding-right: 5px;">{{JSON(list[i].collegeTag)[k]}}</button>
+																{{/if}} {{/each}} {{else}}
+																<button type="button" class="mui-btn mui-ellipsis" style="width:32%;margin-bottom: 5px;background-color: #00BBFF;border-color: rgba(255,255,255,0.5);color: #FFFFFF;padding-right: 5px;padding-left: 5px;visibility: hidden;">占位</button> {{/if}}
+
+														</p>
+													</div>
+												</div>
+											</a>
+										</li>
+										{{/each}} {{/if}}
+									</script>
+								</ul>
+
+							</div>
+						</div>
+					</div>
+					<div id="item2" class="mui-slider-item mui-control-content">
+						<div id="scroll2" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view" id="zhuanye">
+									<script id="zhuanyeData" type="text/html">
+										{{if list}} {{each list as value i}}
+										<li class="mui-table-view-cell mui-media proDaQuanFlag" style="border-bottom: 8px solid #F2F2F2 !important;" data-zyid="{{list[i].zyid}}" data-specialName="{{list[i].specialname}}">
+											<a href="#">
+												<div class="mui-media-body">
+													<div style="width: 100%;" class="mui-pull-right">
+														<h3 style="font-weight: normal;display: inline-block;white-space: normal;width: 70%;">{{list[i].specialname}}</h3>
+														<p class="mui-ellipsis"><span style="float: left;width: 50%;white-space: normal;">大学学历:  <span style="color: #00BBFF;font-size: 16px;">{{list[i].zycengci}}</span></span><span style="float: right;width: 50%;white-space: normal;">人气:  <span style="color: #00BBFF;font-size: 16px;">{{list[i].peopleHeat}}</span></span>
+														</p>
+														<p class="mui-ellipsis"><span style="float: left;width: 50%;white-space: normal;">专业排名:  <span style="color: #00BBFF;font-size: 16px;">{{list[i].ranking}}</span></span><span style="float: right;width: 50%;white-space: normal;">专业代码:  <span style="color: #00BBFF;font-size: 16px;">{{list[i].code}}</span></span>
+														</p>
+
+													</div>
+												</div>
+											</a>
+										</li>
+										{{/each}} {{/if}}
+									</script>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/template.js"></script>
+		<script src="../js/mui.pullToRefresh.js"></script>
+		<script src="../js/mui.pullToRefresh.material.js"></script>
+		<script type="text/javascript" src="../js/app.js"></script>
+		<script type="text/javascript" src="../js/my_collection.js"></script>
+	</body>
+
+</html>
